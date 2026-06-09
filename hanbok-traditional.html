@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>전통한복 컨셉 | 스튜디오리베</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo", "Noto Sans KR", sans-serif;
+      background: #faf7f4;
+      color: #222;
+      line-height: 1.75;
+      -webkit-font-smoothing: antialiased;
+      word-break: keep-all;
+    }
+
+    .page {
+      width: min(100%, 980px);
+      margin: 0 auto;
+      padding: 32px 18px 80px;
+    }
+
+    .back-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      margin-bottom: 30px;
+      color: #8a7364;
+      text-decoration: none;
+      font-size: 18px;
+      font-weight: 800;
+    }
+
+    .hero-image {
+      width: 100%;
+      margin-bottom: 34px;
+      overflow: hidden;
+      border-radius: 32px;
+      background: #eee8e2;
+    }
+
+    .hero-image img {
+      display: block;
+      width: 100%;
+      height: auto;
+      transform: scale(1.08);
+      transform-origin: center center;
+    }
+
+    .concept-title {
+      margin: 0 0 18px;
+      font-size: clamp(42px, 8vw, 72px);
+      line-height: 1.06;
+      letter-spacing: -0.07em;
+      font-weight: 900;
+    }
+
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 28px;
+    }
+
+    .tag {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 10px 18px;
+      border-radius: 999px;
+      background: #efe8df;
+      color: #222;
+      font-weight: 900;
+      font-size: 18px;
+    }
+
+    .intro {
+      margin: 0 0 54px;
+      color: #4d4d4d;
+      font-size: clamp(19px, 2.5vw, 25px);
+      line-height: 1.95;
+      letter-spacing: -0.04em;
+    }
+
+    .section {
+      margin-top: 58px;
+    }
+
+    .section h2 {
+      margin: 0 0 22px;
+      font-size: clamp(30px, 5.5vw, 46px);
+      line-height: 1.2;
+      letter-spacing: -0.06em;
+      font-weight: 900;
+    }
+
+    .section p {
+      margin: 0;
+      color: #4d4d4d;
+      font-size: clamp(18px, 2.4vw, 24px);
+      line-height: 1.95;
+      letter-spacing: -0.04em;
+    }
+
+    .section p + p {
+      margin-top: 18px;
+    }
+
+    .point-list {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 14px;
+      margin-top: 24px;
+    }
+
+    .point-card {
+      padding: 22px 20px;
+      border-radius: 24px;
+      background: #fff;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.055);
+    }
+
+    .point-card strong {
+      display: block;
+      margin-bottom: 8px;
+      font-size: 20px;
+      line-height: 1.35;
+      letter-spacing: -0.04em;
+    }
+
+    .point-card span {
+      display: block;
+      color: #666;
+      font-size: 17px;
+      line-height: 1.75;
+      letter-spacing: -0.03em;
+    }
+
+    .gallery {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 18px;
+      margin-top: 26px;
+    }
+
+    .gallery img {
+      display: block;
+      width: 100%;
+      aspect-ratio: 1 / 1;
+      object-fit: cover;
+      object-position: center;
+      border-radius: 28px;
+      background: #eee8e2;
+      box-shadow: 0 10px 28px rgba(0, 0, 0, 0.06);
+    }
+
+    .cta {
+      margin-top: 70px;
+      padding: 34px 22px;
+      border-radius: 32px;
+      background: #fff;
+      text-align: center;
+      box-shadow: 0 12px 34px rgba(0, 0, 0, 0.065);
+    }
+
+    .cta h2 {
+      margin: 0 0 14px;
+      font-size: clamp(28px, 5vw, 40px);
+      line-height: 1.25;
+      letter-spacing: -0.06em;
+    }
+
+    .cta p {
+      margin: 0 0 24px;
+      color: #666;
+      font-size: 18px;
+      line-height: 1.8;
+      letter-spacing: -0.03em;
+    }
+
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 220px;
+      padding: 16px 28px;
+      border-radius: 999px;
+      background: #b2865f;
+      color: #fff;
+      text-decoration: none;
+      font-size: 20px;
+      font-weight: 900;
+      box-shadow: 0 10px 24px rgba(137, 96, 61, 0.28);
+    }
+
+    @media (min-width: 760px) {
+      .page {
+        padding: 44px 34px 96px;
+      }
+
+      .point-list {
+        grid-template-columns: repeat(3, 1fr);
+      }
+
+      .gallery {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 22px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main class="page">
+    <a href="concepts.html" class="back-link">← 컨셉 목록으로 돌아가기</a>
+
+    <div class="hero-image">
+      <img src="../assets/concepts/300day/hanbok-traditional/hanbok-traditional.jpg" alt="전통한복 컨셉 대표 사진" />
+    </div>
+
+    <h1 class="concept-title">전통한복</h1>
+
+    <div class="tags" aria-label="전통한복 추천 시기">
+      <span class="tag">돌 추천</span>
+      <span class="tag">전통 한복</span>
+      <span class="tag">깔끔한 기념사진</span>
+    </div>
+
+    <p class="intro">
+      전통한복은 이름 그대로의 컨셉입니다. 화려한 연출보다는 돌이라는 시기를 차분하고 단정하게 남기고 싶은 가족들에게 꾸준히 선택받고 있어요.
+    </p>
+
+    <section class="section">
+      <h2>돌 기념으로 오래 사랑받는 이유</h2>
+      <p>
+        돌아기가 한복을 입고 의젓하게 앉아있는 모습은 볼 때마다 특별합니다. 촬영 당시에는 미처 느끼지 못했더라도, 사진으로 다시 마주하면 감회가 새롭다고 말씀해주시는 경우가 많아요.
+      </p>
+      <p>
+        유행을 크게 타지 않는 구성이라 시간이 지나도 편안하게 꺼내볼 수 있는 돌사진으로 남습니다.
+      </p>
+    </section>
+
+    <section class="section">
+      <h2>전통한복 컨셉의 매력</h2>
+      <div class="point-list">
+        <div class="point-card">
+          <strong>깔끔한 돌기념 사진</strong>
+          <span>복잡한 소품보다 한복과 아기에게 시선이 머물도록 구성했습니다.</span>
+        </div>
+        <div class="point-card">
+          <strong>단정한 분위기</strong>
+          <span>심플한 배경 덕분에 한복의 아름다움과 아기의 모습이 더욱 돋보입니다.</span>
+        </div>
+        <div class="point-card">
+          <strong>오래 봐도 질리지 않아요</strong>
+          <span>유행보다는 클래식한 매력을 담아 시간이 지나도 부담 없이 꺼내볼 수 있습니다.</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>세봄마루와 전통한복</h2>
+      <p>
+        리베의 한복 촬영은 크게 세봄마루와 전통한복 두 가지로 나뉩니다. 그중 전통한복은 보다 심플한 배경을 선호하는 가족들에게 추천드리는 컨셉입니다.
+      </p>
+    </section>
+
+    <section class="section" aria-label="전통한복 컨셉 사진 갤러리">
+      <h2>컨셉 사진 더보기</h2>
+      <div class="gallery">
+        <img src="../assets/concepts/300day/hanbok-traditional/001.jpg" alt="전통한복 컨셉 사진 1" loading="lazy" />
+        <img src="../assets/concepts/300day/hanbok-traditional/002.jpg" alt="전통한복 컨셉 사진 2" loading="lazy" />
+        <img src="../assets/concepts/300day/hanbok-traditional/003.jpg" alt="전통한복 컨셉 사진 3" loading="lazy" />
+      </div>
+    </section>
+
+    <section class="cta">
+      <h2>전통한복 컨셉이 마음에 든다면</h2>
+      <p>돌 시기의 아기와 특히 잘 어울리는 컨셉입니다. 다른 돌 컨셉들과의 조합도 함께 안내해드릴게요.</p>
+      <a href="http://pf.kakao.com/_xcfcFd/chat" class="button" target="_blank" rel="noopener noreferrer">문의하기</a>
+    </section>
+  </main>
+</body>
+</html>

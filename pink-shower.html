@@ -1,0 +1,295 @@
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>핑크샤워 컨셉 | 스튜디오리베</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo", "Noto Sans KR", sans-serif;
+      background: #faf7f4;
+      color: #222;
+      line-height: 1.75;
+      -webkit-font-smoothing: antialiased;
+      word-break: keep-all;
+    }
+
+    .page {
+      width: min(100%, 980px);
+      margin: 0 auto;
+      padding: 32px 18px 80px;
+    }
+
+    .back-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      margin-bottom: 30px;
+      color: #8a7364;
+      text-decoration: none;
+      font-size: 18px;
+      font-weight: 800;
+    }
+
+    .hero-image {
+      width: 100%;
+      margin-bottom: 34px;
+      overflow: hidden;
+      border-radius: 32px;
+      background: #eee8e2;
+    }
+
+    .hero-image img {
+      display: block;
+      width: 100%;
+      height: auto;
+      transform: scale(1.08);
+      transform-origin: center center;
+    }
+
+    .concept-title {
+      margin: 0 0 18px;
+      font-size: clamp(42px, 8vw, 72px);
+      line-height: 1.06;
+      letter-spacing: -0.07em;
+      font-weight: 900;
+    }
+
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 28px;
+    }
+
+    .tag {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 10px 18px;
+      border-radius: 999px;
+      background: #efe8df;
+      color: #222;
+      font-weight: 900;
+      font-size: 18px;
+    }
+
+    .intro {
+      margin: 0 0 54px;
+      color: #4d4d4d;
+      font-size: clamp(19px, 2.5vw, 25px);
+      line-height: 1.95;
+      letter-spacing: -0.04em;
+    }
+
+    .section {
+      margin-top: 58px;
+    }
+
+    .section h2 {
+      margin: 0 0 22px;
+      font-size: clamp(30px, 5.5vw, 46px);
+      line-height: 1.2;
+      letter-spacing: -0.06em;
+      font-weight: 900;
+    }
+
+    .section p {
+      margin: 0;
+      color: #4d4d4d;
+      font-size: clamp(18px, 2.4vw, 24px);
+      line-height: 1.95;
+      letter-spacing: -0.04em;
+    }
+
+    .section p + p {
+      margin-top: 18px;
+    }
+
+    .point-list {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 14px;
+      margin-top: 24px;
+    }
+
+    .point-card {
+      padding: 22px 20px;
+      border-radius: 24px;
+      background: #fff;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.055);
+    }
+
+    .point-card strong {
+      display: block;
+      margin-bottom: 8px;
+      font-size: 20px;
+      line-height: 1.35;
+      letter-spacing: -0.04em;
+    }
+
+    .point-card span {
+      display: block;
+      color: #666;
+      font-size: 17px;
+      line-height: 1.75;
+      letter-spacing: -0.03em;
+    }
+
+    .gallery {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 18px;
+      margin-top: 26px;
+    }
+
+    .gallery img {
+      display: block;
+      width: 100%;
+      aspect-ratio: 1 / 1;
+      object-fit: cover;
+      object-position: center;
+      border-radius: 28px;
+      background: #eee8e2;
+      box-shadow: 0 10px 28px rgba(0, 0, 0, 0.06);
+    }
+
+    .cta {
+      margin-top: 70px;
+      padding: 34px 22px;
+      border-radius: 32px;
+      background: #fff;
+      text-align: center;
+      box-shadow: 0 12px 34px rgba(0, 0, 0, 0.065);
+    }
+
+    .cta h2 {
+      margin: 0 0 14px;
+      font-size: clamp(28px, 5vw, 40px);
+      line-height: 1.25;
+      letter-spacing: -0.06em;
+    }
+
+    .cta p {
+      margin: 0 0 24px;
+      color: #666;
+      font-size: 18px;
+      line-height: 1.8;
+      letter-spacing: -0.03em;
+    }
+
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 220px;
+      padding: 16px 28px;
+      border-radius: 999px;
+      background: #b2865f;
+      color: #fff;
+      text-decoration: none;
+      font-size: 20px;
+      font-weight: 900;
+      box-shadow: 0 10px 24px rgba(137, 96, 61, 0.28);
+    }
+
+    @media (min-width: 760px) {
+      .page {
+        padding: 44px 34px 96px;
+      }
+
+      .point-list {
+        grid-template-columns: repeat(3, 1fr);
+      }
+
+      .gallery {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 22px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main class="page">
+    <a href="concepts.html" class="back-link">← 컨셉 목록으로 돌아가기</a>
+
+    <div class="hero-image">
+      <img src="../assets/concepts/200day/pink-shower/pink-shower.jpg" alt="핑크샤워 컨셉 대표 사진" />
+    </div>
+
+    <h1 class="concept-title">핑크샤워</h1>
+
+    <div class="tags" aria-label="가든 추천 시기">
+      <span class="tag">200일 추천</span>
+      <span class="tag">볼풀장</span>
+      <span class="tag">알록달록</span>
+    </div>
+
+    <p class="intro">
+      핑크샤워는 리베가 오래전부터 만들고 싶었던 볼풀장 컨셉에서 시작되었습니다. 알록달록한 색감과 귀여운 볼풀공들이 만들어내는 즐거운 분위기가 매력인 컨셉입니다.
+    </p>
+
+    <section class="section">
+      <h2>볼풀장의 단점을 해결하고 싶었어요</h2>
+      <p>
+        생각보다 깊은 볼풀장을 무서워하는 아가들이 많았습니다. 발이 닿지 않거나 중심을 잡기 어려우면 아가들은 금세 겁을 먹곤 하거든요.
+      </p>
+      <p>
+        핑크샤워는 그런 문제를 해결하기 위해 만들어졌습니다. 아기가 편안하게 적응할 수 있으면서도 볼풀장의 즐거움은 그대로 느낄 수 있도록 구성했습니다.
+      </p>
+    </section>
+
+    <section class="section">
+      <h2>이런 점이 좋아요</h2>
+      <div class="point-list">
+        <div class="point-card">
+          <strong>볼풀공 샤워</strong>
+          <span>아기가 볼풀공으로 샤워를 하는 듯한 상상에서 시작된 컨셉입니다.</span>
+        </div>
+        <div class="point-card">
+          <strong>알록달록한 색감</strong>
+          <span>다양한 색의 볼풀공들이 사진에 생동감과 즐거움을 더해줍니다.</span>
+        </div>
+        <div class="point-card">
+          <strong>겁 많은 아기도 가능</strong>
+          <span>엄마와 함께 잠시 놀다 보면 대부분의 아기들이 금방 적응할 수 있습니다.</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>즐겁게 적응하는 시간</h2>
+      <p>
+        겁이 있는 아기들은 처음에 낯설어할 수도 있습니다. 하지만 엄마와 함께 들어가 잠깐만 놀아도 금세 익숙해지는 경우가 많습니다. 그래서 웃는 모습과 호기심 가득한 표정이 특히 잘 담기는 컨셉이기도 합니다.
+      </p>
+    </section>
+
+    <section class="section" aria-label="핑크샤워 컨셉 사진 갤러리">
+      <h2>컨셉 사진 더보기</h2>
+      <div class="gallery">
+        <img src="../assets/concepts/200day/pink-shower/001.jpg" alt="핑크샤워 컨셉 사진 1" loading="lazy" />
+        <img src="../assets/concepts/200day/pink-shower/002.jpg" alt="핑크샤워 컨셉 사진 2" loading="lazy" />
+        <img src="../assets/concepts/200day/pink-shower/003.jpg" alt="핑크샤워 컨셉 사진 3" loading="lazy" />
+        <img src="../assets/concepts/200day/pink-shower/004.jpg" alt="핑크샤워 컨셉 사진 4" loading="lazy" />
+        <img src="../assets/concepts/200day/pink-shower/005.jpg" alt="핑크샤워 컨셉 사진 5" loading="lazy" />
+        <img src="../assets/concepts/200day/pink-shower/006.jpg" alt="핑크샤워 컨셉 사진 6" loading="lazy" />
+        <img src="../assets/concepts/200day/pink-shower/007.jpg" alt="핑크샤워 컨셉 사진 7" loading="lazy" />
+        <img src="../assets/concepts/200day/pink-shower/008.jpg" alt="핑크샤워 컨셉 사진 8" loading="lazy" />
+        <img src="../assets/concepts/200day/pink-shower/009.jpg" alt="핑크샤워 컨셉 사진 9" loading="lazy" />
+      </div>
+    </section>
+
+    <section class="cta">
+      <h2>핑크샤워가 마음에 든다면</h2>
+      <p>아기의 시기와 함께 촬영하고 싶은 컨셉을 알려주세요. 가능한 구성과 어울리는 조합을 차분히 안내해드릴게요.</p>
+      <a href="http://pf.kakao.com/_xcfcFd/chat" class="button" target="_blank" rel="noopener noreferrer">문의하기</a>
+    </section>
+  </main>
+</body>
+</html>

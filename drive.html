@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>드라이브 컨셉 | 스튜디오리베</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo", "Noto Sans KR", sans-serif;
+      background: #faf7f4;
+      color: #222;
+      line-height: 1.75;
+      -webkit-font-smoothing: antialiased;
+      word-break: keep-all;
+    }
+
+    .page {
+      width: min(100%, 980px);
+      margin: 0 auto;
+      padding: 32px 18px 80px;
+    }
+
+    .back-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      margin-bottom: 30px;
+      color: #8a7364;
+      text-decoration: none;
+      font-size: 18px;
+      font-weight: 800;
+    }
+
+    .hero-image {
+      width: 100%;
+      margin-bottom: 34px;
+      overflow: hidden;
+      border-radius: 32px;
+      background: #eee8e2;
+    }
+
+    .hero-image img {
+      display: block;
+      width: 100%;
+      height: auto;
+      transform: scale(1.08);
+      transform-origin: center center;
+    }
+
+    .concept-title {
+      margin: 0 0 18px;
+      font-size: clamp(42px, 8vw, 72px);
+      line-height: 1.06;
+      letter-spacing: -0.07em;
+      font-weight: 900;
+    }
+
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 28px;
+    }
+
+    .tag {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 10px 18px;
+      border-radius: 999px;
+      background: #efe8df;
+      color: #222;
+      font-weight: 900;
+      font-size: 18px;
+    }
+
+    .intro {
+      margin: 0 0 54px;
+      color: #4d4d4d;
+      font-size: clamp(19px, 2.5vw, 25px);
+      line-height: 1.95;
+      letter-spacing: -0.04em;
+    }
+
+    .section {
+      margin-top: 58px;
+    }
+
+    .section h2 {
+      margin: 0 0 22px;
+      font-size: clamp(30px, 5.5vw, 46px);
+      line-height: 1.2;
+      letter-spacing: -0.06em;
+      font-weight: 900;
+    }
+
+    .section p {
+      margin: 0;
+      color: #4d4d4d;
+      font-size: clamp(18px, 2.4vw, 24px);
+      line-height: 1.95;
+      letter-spacing: -0.04em;
+    }
+
+    .section p + p {
+      margin-top: 18px;
+    }
+
+    .point-list {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 14px;
+      margin-top: 24px;
+    }
+
+    .point-card {
+      padding: 22px 20px;
+      border-radius: 24px;
+      background: #fff;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.055);
+    }
+
+    .point-card strong {
+      display: block;
+      margin-bottom: 8px;
+      font-size: 20px;
+      line-height: 1.35;
+      letter-spacing: -0.04em;
+    }
+
+    .point-card span {
+      display: block;
+      color: #666;
+      font-size: 17px;
+      line-height: 1.75;
+      letter-spacing: -0.03em;
+    }
+
+    .gallery {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 18px;
+      margin-top: 26px;
+    }
+
+    .gallery-frame {
+      aspect-ratio: 1 / 1;
+      overflow: hidden;
+      border-radius: 28px;
+      background: #eee8e2;
+      box-shadow: 0 10px 28px rgba(0, 0, 0, 0.06);
+    }
+
+    .gallery-frame img,
+    .gallery > img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      border-radius: 28px;
+      background: #eee8e2;
+    }
+
+    .gallery-frame.zoom-drive img {
+      transform: scale(1.07);
+    }
+
+    .gallery-frame.zoom-drive-001 img {
+      transform: scale(1.08);
+    }
+
+    .cta {
+      margin-top: 70px;
+      padding: 34px 22px;
+      border-radius: 32px;
+      background: #fff;
+      text-align: center;
+      box-shadow: 0 12px 34px rgba(0, 0, 0, 0.065);
+    }
+
+    .cta h2 {
+      margin: 0 0 14px;
+      font-size: clamp(28px, 5vw, 40px);
+      line-height: 1.25;
+      letter-spacing: -0.06em;
+    }
+
+    .cta p {
+      margin: 0 0 24px;
+      color: #666;
+      font-size: 18px;
+      line-height: 1.8;
+      letter-spacing: -0.03em;
+    }
+
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 220px;
+      padding: 16px 28px;
+      border-radius: 999px;
+      background: #b2865f;
+      color: #fff;
+      text-decoration: none;
+      font-size: 20px;
+      font-weight: 900;
+      box-shadow: 0 10px 24px rgba(137, 96, 61, 0.28);
+    }
+
+    @media (min-width: 760px) {
+      .page {
+        padding: 44px 34px 96px;
+      }
+
+      .point-list {
+        grid-template-columns: repeat(3, 1fr);
+      }
+
+      .gallery {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 22px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main class="page">
+    <a href="concepts.html" class="back-link">← 컨셉 목록으로 돌아가기</a>
+
+    <div class="hero-image">
+      <img src="../assets/concepts/300day/drive/drive.jpg" alt="드라이브 컨셉 대표 사진" />
+    </div>
+
+    <h1 class="concept-title">드라이브</h1>
+
+    <div class="tags" aria-label="드라이브 추천 시기">
+      <span class="tag">300일 추천</span>
+      <span class="tag">자동차 컨셉</span>
+      <span class="tag">리베 시그니처</span>
+    </div>
+
+    <p class="intro">
+      드라이브 컨셉은 리베가 오래전부터 가지고 있던 자동차 소품을 활용하기 위해 만들어졌습니다. 원래는 분홍색 자동차였지만 개인적으로 색감이 아쉬워 전체 도색을 다시 진행했고, 꽃으로 장식해 지금의 모습이 완성되었어요.
+    </p>
+
+    <section class="section">
+      <h2>꽃을 싣고 떠나는 드라이브</h2>
+      <p>
+        꽃으로 장식된 자동차를 만들면서 어릴 적 보았던 '꽃향기를 맡으면 힘이 솟는 붕붕'이라는 만화를 떠올렸습니다. 그래서 단순한 자동차보다 조금 더 동화 같은 분위기를 담고 싶었어요.
+      </p>
+      <p>
+        리베의 다양한 컨셉 중에서도 색감이 특히 밝고 경쾌한 편이라 아기의 표정이 더욱 생기 있게 담기는 컨셉이기도 합니다.
+      </p>
+    </section>
+
+    <section class="section">
+      <h2>드라이브 컨셉의 매력</h2>
+      <div class="point-list">
+        <div class="point-card">
+          <strong>자동차를 직접 만질 수 있어요</strong>
+          <span>운전대를 잡고 돌릴 수 있어서 대부분의 아가들이 흥미를 보이는 컨셉입니다.</span>
+        </div>
+        <div class="point-card">
+          <strong>밝고 경쾌한 분위기</strong>
+          <span>꽃과 자동차가 만드는 산뜻한 색감 덕분에 사진이 더욱 생동감 있게 완성됩니다.</span>
+        </div>
+        <div class="point-card">
+          <strong>리베만의 자동차 컨셉</strong>
+          <span>기존 자동차 소품을 직접 도색하고 꾸며 지금의 모습으로 완성한 컨셉입니다.</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>아가들이 특히 좋아하는 이유</h2>
+      <p>
+        드라이브 컨셉은 눈으로만 보는 소품이 아니라 직접 만질 수 있는 요소가 있다는 점이 특징입니다. 특히 운전대를 잡고 돌리는 행동을 재미있어하는 아가들이 많아 자연스러운 표정을 담기 좋은 컨셉입니다.
+      </p>
+    </section>
+
+    <section class="section" aria-label="드라이브 컨셉 사진 갤러리">
+      <h2>컨셉 사진 더보기</h2>
+      <div class="gallery">
+        <div class="gallery-frame zoom-drive-001">
+          <img src="../assets/concepts/300day/drive/001.jpg" alt="드라이브 컨셉 사진 1" loading="lazy" />
+        </div>
+        <div class="gallery-frame zoom-drive">
+          <img src="../assets/concepts/300day/drive/002.jpg" alt="드라이브 컨셉 사진 2" loading="lazy" />
+        </div>
+        <div class="gallery-frame zoom-drive">
+          <img src="../assets/concepts/300day/drive/003.jpg" alt="드라이브 컨셉 사진 3" loading="lazy" />
+        </div>
+        <img src="../assets/concepts/300day/drive/004.jpg" alt="드라이브 컨셉 사진 4" loading="lazy" />
+        <img src="../assets/concepts/300day/drive/005.jpg" alt="드라이브 컨셉 사진 5" loading="lazy" />
+        <img src="../assets/concepts/300day/drive/006.jpg" alt="드라이브 컨셉 사진 6" loading="lazy" />
+        <img src="../assets/concepts/300day/drive/007.jpg" alt="드라이브 컨셉 사진 7" loading="lazy" />
+        <img src="../assets/concepts/300day/drive/008.jpg" alt="드라이브 컨셉 사진 8" loading="lazy" />
+        <img src="../assets/concepts/300day/drive/009.jpg" alt="드라이브 컨셉 사진 9" loading="lazy" />
+        <img src="../assets/concepts/300day/drive/010.jpg" alt="드라이브 컨셉 사진 10" loading="lazy" />
+        <img src="../assets/concepts/300day/drive/011.jpg" alt="드라이브 컨셉 사진 11" loading="lazy" />
+        <img src="../assets/concepts/300day/drive/012.jpg" alt="드라이브 컨셉 사진 12" loading="lazy" />
+        <img src="../assets/concepts/300day/drive/013.jpg" alt="드라이브 컨셉 사진 13" loading="lazy" />
+      </div>
+    </section>
+
+    <section class="cta">
+      <h2>드라이브 컨셉이 마음에 든다면</h2>
+      <p>300일 시기의 아기와 특히 잘 어울리는 컨셉입니다. 다른 컨셉들과의 조합도 함께 안내해드릴게요.</p>
+      <a href="http://pf.kakao.com/_xcfcFd/chat" class="button" target="_blank" rel="noopener noreferrer">문의하기</a>
+    </section>
+  </main>
+</body>
+</html>

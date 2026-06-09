@@ -1,0 +1,294 @@
+
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>귤 컨셉 | 스튜디오리베</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo", "Noto Sans KR", sans-serif;
+      background: #faf7f4;
+      color: #222;
+      line-height: 1.75;
+      -webkit-font-smoothing: antialiased;
+      word-break: keep-all;
+    }
+
+    .page {
+      width: min(100%, 980px);
+      margin: 0 auto;
+      padding: 32px 18px 80px;
+    }
+
+    .back-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      margin-bottom: 30px;
+      color: #8a7364;
+      text-decoration: none;
+      font-size: 18px;
+      font-weight: 800;
+    }
+
+    .hero-image {
+      width: 100%;
+      margin-bottom: 34px;
+      overflow: hidden;
+      border-radius: 32px;
+      background: #eee8e2;
+    }
+
+    .hero-image img {
+      display: block;
+      width: 100%;
+      height: auto;
+      object-fit: contain;
+    }
+
+    .concept-title {
+      margin: 0 0 18px;
+      font-size: clamp(42px, 8vw, 72px);
+      line-height: 1.06;
+      letter-spacing: -0.07em;
+      font-weight: 900;
+    }
+
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 28px;
+    }
+
+    .tag {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 10px 18px;
+      border-radius: 999px;
+      background: #efe8df;
+      color: #222;
+      font-weight: 900;
+      font-size: 18px;
+    }
+
+    .intro {
+      margin: 0 0 54px;
+      color: #4d4d4d;
+      font-size: clamp(19px, 2.5vw, 25px);
+      line-height: 1.95;
+      letter-spacing: -0.04em;
+    }
+
+    .section {
+      margin-top: 58px;
+    }
+
+    .section h2 {
+      margin: 0 0 22px;
+      font-size: clamp(30px, 5.5vw, 46px);
+      line-height: 1.2;
+      letter-spacing: -0.06em;
+      font-weight: 900;
+    }
+
+    .section p {
+      margin: 0;
+      color: #4d4d4d;
+      font-size: clamp(18px, 2.4vw, 24px);
+      line-height: 1.95;
+      letter-spacing: -0.04em;
+    }
+
+    .section p + p {
+      margin-top: 18px;
+    }
+
+    .point-list {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 14px;
+      margin-top: 24px;
+    }
+
+    .point-card {
+      padding: 22px 20px;
+      border-radius: 24px;
+      background: #fff;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.055);
+    }
+
+    .point-card strong {
+      display: block;
+      margin-bottom: 8px;
+      font-size: 20px;
+      line-height: 1.35;
+      letter-spacing: -0.04em;
+    }
+
+    .point-card span {
+      display: block;
+      color: #666;
+      font-size: 17px;
+      line-height: 1.75;
+      letter-spacing: -0.03em;
+    }
+
+    .gallery {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 18px;
+      margin-top: 26px;
+    }
+
+    .gallery img {
+      display: block;
+      width: 100%;
+      aspect-ratio: 1 / 1;
+      object-fit: cover;
+      object-position: center;
+      border-radius: 28px;
+      background: #eee8e2;
+      box-shadow: 0 10px 28px rgba(0, 0, 0, 0.06);
+    }
+
+    .cta {
+      margin-top: 70px;
+      padding: 34px 22px;
+      border-radius: 32px;
+      background: #fff;
+      text-align: center;
+      box-shadow: 0 12px 34px rgba(0, 0, 0, 0.065);
+    }
+
+    .cta h2 {
+      margin: 0 0 14px;
+      font-size: clamp(28px, 5vw, 40px);
+      line-height: 1.25;
+      letter-spacing: -0.06em;
+    }
+
+    .cta p {
+      margin: 0 0 24px;
+      color: #666;
+      font-size: 18px;
+      line-height: 1.8;
+      letter-spacing: -0.03em;
+    }
+
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 220px;
+      padding: 16px 28px;
+      border-radius: 999px;
+      background: #b2865f;
+      color: #fff;
+      text-decoration: none;
+      font-size: 20px;
+      font-weight: 900;
+      box-shadow: 0 10px 24px rgba(137, 96, 61, 0.28);
+    }
+
+    @media (min-width: 760px) {
+      .page {
+        padding: 44px 34px 96px;
+      }
+
+      .point-list {
+        grid-template-columns: repeat(3, 1fr);
+      }
+
+      .gallery {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 22px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main class="page">
+    <a href="concepts.html" class="back-link">← 컨셉 목록으로 돌아가기</a>
+
+    <div class="hero-image">
+      <img src="../assets/concepts/100day/gyul/gyul.jpg" alt="귤 컨셉 대표 사진" />
+    </div>
+
+    <h1 class="concept-title">귤</h1>
+
+    <div class="tags" aria-label="귤 추천 시기">
+      <span class="tag">100일 추천</span>
+      <span class="tag">리베 대표컨셉</span>
+      <span class="tag">원근감</span>
+    </div>
+
+    <p class="intro">
+      귤은 이제 명실상부 리베의 대표 컨셉 중 하나가 되었습니다.
+      진한 색감 때문에 처음에는 고민하시는 분들도 있지만, 실제 결과물을 보시면 가장 만족도가 높은 컨셉 중 하나이기도 합니다.
+    </p>
+
+    <section class="section">
+      <h2>리베다운 컨셉</h2>
+      <p>
+        리베는 유난히 원근감에 집착하는 편입니다. 같은 공간이라도 더 입체적으로 보이고, 아기가 더욱 돋보일 수 있는 구성을 좋아하거든요.
+      </p>
+      <p>
+        귤 컨셉은 그런 리베의 성향이 가장 잘 드러나는 컨셉입니다. 특히 공중에 매달린 귤 장식들이 만들어내는 깊이감은 이 컨셉의 가장 큰 특징이기도 합니다.
+      </p>
+    </section>
+
+    <section class="section">
+      <h2>이런 점이 좋아요</h2>
+      <div class="point-list">
+        <div class="point-card">
+          <strong>리베 대표컨셉</strong>
+          <span>리베를 대표하는 시그니처 컨셉 중 하나로 꾸준히 사랑받고 있습니다.</span>
+        </div>
+        <div class="point-card">
+          <strong>입체적인 원근감</strong>
+          <span>공간 전체에 깊이감을 주어 사진이 더욱 풍성하게 느껴집니다.</span>
+        </div>
+        <div class="point-card">
+          <strong>생각보다 예쁜 색감</strong>
+          <span>강한 색감 때문에 고민하는 경우가 많지만 결과물 만족도가 높은 컨셉입니다.</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>망설인다면 오히려 추천</h2>
+      <p>
+        귤 컨셉은 사진으로 보기 전에는 색감이 강해 보일 수 있습니다. 하지만 실제 촬영 결과물을 보면 생각보다 훨씬 자연스럽고, 아기의 표정과 피부톤도 예쁘게 살아납니다. 그래서 오히려 고민하고 계신다면 한 번쯤 자신 있게 추천드리고 싶은 컨셉입니다.
+      </p>
+    </section>
+
+    <section class="section" aria-label="귤 컨셉 사진 갤러리">
+      <h2>컨셉 사진 더보기</h2>
+      <div class="gallery">
+        <img src="../assets/concepts/100day/gyul/001.jpg" alt="귤 컨셉 사진 1" loading="lazy" />
+        <img src="../assets/concepts/100day/gyul/002.jpg" alt="귤 컨셉 사진 2" loading="lazy" />
+        <img src="../assets/concepts/100day/gyul/003.jpg" alt="귤 컨셉 사진 3" loading="lazy" />
+        <img src="../assets/concepts/100day/gyul/004.jpg" alt="귤 컨셉 사진 4" loading="lazy" />
+        <img src="../assets/concepts/100day/gyul/005.jpg" alt="귤 컨셉 사진 5" loading="lazy" />
+        <img src="../assets/concepts/100day/gyul/006.jpg" alt="귤 컨셉 사진 6" loading="lazy" />
+        <img src="../assets/concepts/100day/gyul/007.jpg" alt="귤 컨셉 사진 7" loading="lazy" />
+      </div>
+    </section>
+
+    <section class="cta">
+      <h2>귤 컨셉이 마음에 든다면</h2>
+      <p>아기의 시기와 함께 촬영하고 싶은 컨셉을 알려주세요. 가능한 구성과 어울리는 조합을 차분히 안내해드릴게요.</p>
+      <a href="http://pf.kakao.com/_xcfcFd/chat" class="button" target="_blank" rel="noopener noreferrer">문의하기</a>
+    </section>
+  </main>
+</body>
+</html>

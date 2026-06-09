@@ -1,0 +1,590 @@
+
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>시기별 컨셉 안내 | 스튜디오리베</title>
+
+    <style>
+        *{
+            margin:0;
+            padding:0;
+            box-sizing:border-box;
+        }
+
+        body{
+            font-family:-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Noto Sans KR",sans-serif;
+            background:#faf7f2;
+            color:#222;
+        }
+
+        .container{
+            max-width:980px;
+            margin:0 auto;
+            padding:34px 18px 80px;
+        }
+
+        .top-link{
+            display:inline-flex;
+            margin-bottom:28px;
+            color:#8b6f5a;
+            text-decoration:none;
+            font-weight:800;
+            font-size:14px;
+        }
+
+        .hero{
+            margin-bottom:34px;
+        }
+
+        .eyebrow{
+            margin-bottom:12px;
+            font-size:13px;
+            font-weight:800;
+            letter-spacing:0.12em;
+            color:#9b8f82;
+        }
+
+        h1{
+            margin-bottom:16px;
+            font-size:40px;
+            line-height:1.18;
+            letter-spacing:-0.05em;
+        }
+
+        .intro{
+            color:#666;
+            line-height:1.8;
+            font-size:16px;
+        }
+
+        .age-tabs{
+            position:sticky;
+            top:0;
+            z-index:10;
+            display:flex;
+            gap:8px;
+            overflow-x:auto;
+            padding:12px 0 18px;
+            margin:0 -18px 28px;
+            padding-left:18px;
+            padding-right:18px;
+            background:rgba(250,247,242,0.94);
+            backdrop-filter:blur(10px);
+        }
+
+        .age-tabs a{
+            flex:0 0 auto;
+            padding:10px 15px;
+            border-radius:999px;
+            background:#fff;
+            color:#555;
+            text-decoration:none;
+            font-size:14px;
+            font-weight:800;
+            border:1px solid rgba(0,0,0,0.06);
+        }
+
+        .age-section{
+            margin-bottom:54px;
+            scroll-margin-top:86px;
+        }
+
+        .section-title{
+            margin-bottom:18px;
+        }
+
+        .section-title h2{
+            font-size:30px;
+            line-height:1.25;
+            letter-spacing:-0.04em;
+            margin-bottom:8px;
+        }
+
+        .section-title p{
+            color:#777;
+            line-height:1.7;
+        }
+
+        .concept-grid{
+            display:grid;
+            grid-template-columns:1fr;
+            gap:18px;
+        }
+
+        .concept-card{
+            position:relative;
+            overflow:hidden;
+            border-radius:26px;
+            background:#fff;
+            box-shadow:0 10px 28px rgba(0,0,0,0.06);
+        }
+        .concept-card-link{
+            display:block;
+            color:inherit;
+            text-decoration:none;
+            cursor:pointer;
+        }
+
+        .concept-card img{
+            display:block;
+            width:100%;
+            aspect-ratio:1 / 1;
+            object-fit:cover;
+            background:#e6e1da;
+        }
+
+        .concept-card img.garden-cover{
+            transform:scale(1.035);
+        }
+
+        .concept-card-body{
+            padding:18px;
+        }
+
+        .concept-card h3{
+            font-size:20px;
+            margin-bottom:8px;
+            letter-spacing:-0.03em;
+        }
+
+        .concept-card p{
+            color:#666;
+            line-height:1.65;
+            font-size:15px;
+            margin-bottom:14px;
+        }
+
+        .concept-more{
+            display:inline-flex;
+            color:#9b6b53;
+            font-weight:900;
+            text-decoration:none;
+            font-size:15px;
+        }
+
+        .concept-card article,
+        .concept-card-body{
+            position:relative;
+        }
+
+        .concept-card a.concept-more::after{
+            content:"";
+            position:absolute;
+            inset:-1000px;
+        }
+
+        @media (min-width:720px){
+            .container{
+                padding-left:28px;
+                padding-right:28px;
+            }
+
+            h1{
+                font-size:56px;
+            }
+
+            .concept-grid{
+                grid-template-columns:repeat(3, 1fr);
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <a class="top-link" href="index.html">← 홈페이지로 돌아가기</a>
+
+    <section class="hero">
+        <div class="eyebrow">CONCEPT GUIDE</div>
+        <h1>시기별 컨셉 안내</h1>
+        <p class="intro">
+            신생아부터 100일, 200일, 300일, 가족사진과 만삭사진까지.
+            아기의 시기와 가족의 취향에 맞춰 선택할 수 있도록 컨셉을 정리했습니다.
+        </p>
+    </section>
+
+    <nav class="age-tabs" aria-label="시기별 컨셉 바로가기">
+        <a href="#newborn">신생아</a>
+        <a href="#100day">100일</a>
+        <a href="#200day">200일</a>
+        <a href="#300day">300일</a>
+        <a href="#family">가족사진</a>
+        <a href="#maternity">만삭사진</a>
+    </nav>
+
+    <section class="age-section" id="newborn">
+        <div class="section-title">
+            <h2>신생아</h2>
+            <p>본아트와 50일 촬영은 컨셉을 세분화하기보다 시기별 묶음으로 안내합니다.</p>
+        </div>
+        <div class="concept-grid">
+            <a class="concept-card concept-card-link" href="bornart.html">
+                <img src="../assets/concepts/newborn/bornart/bornart.jpg" alt="스튜디오리베 본아트 사진">
+                <div class="concept-card-body">
+                    <h3>본아트</h3>
+                    <p>태어난 지 얼마 되지 않은 시기의 작고 소중한 모습을 기록합니다.</p>
+                    <span class="concept-more">컨셉 자세히 보기 →</span>
+                </div>
+            </a>
+
+            <a class="concept-card concept-card-link" href="50day.html">
+                <img src="../assets/concepts/newborn/50day/50day.jpg" alt="스튜디오리베 50일 아기사진">
+                <div class="concept-card-body">
+                    <h3>50일</h3>
+                    <p>아직 작고 여린 시기의 분위기를 담는 50일 촬영입니다.</p>
+                    <span class="concept-more">컨셉 자세히 보기 →</span>
+                </div>
+            </a>
+        </div>
+    </section>
+
+    <section class="age-section" id="100day">
+        <div class="section-title">
+            <h2>100일</h2>
+            <p>백일 시기에 잘 어울리는 귀엽고 밝은 컨셉들입니다.</p>
+        </div>
+        <div class="concept-grid">
+            <a class="concept-card concept-card-link" href="garden.html">
+                <img class="garden-cover" src="../assets/concepts/100day/garden/garden.jpg" alt="100일 가든 컨셉">
+                <div class="concept-card-body">
+                    <h3>가든</h3>
+                    <p>초록빛 정원 느낌이 담긴 백일 컨셉입니다.</p>
+                    <span class="concept-more">컨셉 자세히 보기 →</span>
+                </div>
+            </a>
+            <a class="concept-card concept-card-link" href="bear.html">
+                <img src="../assets/concepts/100day/bear/bear.jpg" alt="100일 곰돌이 컨셉">
+                <div class="concept-card-body">
+                    <h3>곰돌이</h3>
+                    <p>포근하고 귀여운 분위기의 곰돌이 컨셉입니다.</p>
+                    <span class="concept-more">컨셉 자세히 보기 →</span>
+                </div>
+            </a>
+            <a class="concept-card concept-card-link" href="flowerpot-daisy.html">
+                <img src="../assets/concepts/100day/flowerpot-daisy/flowerpot-daisy.jpg" alt="100일 꽃화분 데이지 컨셉">
+                <div class="concept-card-body">
+                    <h3>꽃화분 데이지</h3>
+                    <p>꽃화분 속에 들어온 듯한 리베 대표 컨셉입니다.</p>
+                    <span class="concept-more">컨셉 자세히 보기 →</span>
+                </div>
+            </a>
+            <a class="concept-card concept-card-link" href="flowerpot-daisy.html">
+                <img src="../assets/concepts/100day/flowerpot-lily/flowerpot-lily.jpg" alt="100일 꽃화분 은방울 컨셉">
+                <div class="concept-card-body">
+                    <h3>꽃화분 은방울</h3>
+                    <p>꽃화분 컨셉의 은방울 베리에이션입니다.</p>
+                    <span class="concept-more">컨셉 자세히 보기 →</span>
+                </div>
+            </a>
+            <a class="concept-card concept-card-link" href="rattan_duck.html">
+                <img src="../assets/concepts/100day/rattan-duck/rattan-duck.jpg" alt="100일 라탄오리 컨셉">
+                <div class="concept-card-body">
+                    <h3>라탄오리</h3>
+                    <p>라탄 소품과 오리의 귀여운 분위기를 담았습니다.</p>
+                    <span class="concept-more">컨셉 자세히 보기 →</span>
+                </div>
+            </a>
+            <a class="concept-card concept-card-link" href="star-rabbit.html">
+                <img src="../assets/concepts/100day/star-rabbit/star-rabbit.jpg" alt="100일 별토끼 컨셉">
+                <div class="concept-card-body">
+                    <h3>별토끼</h3>
+                    <p>작고 포근한 상상력이 담긴 컨셉입니다.</p>
+                    <span class="concept-more">컨셉 자세히 보기 →</span>
+                </div>
+            </a>
+            <a class="concept-card concept-card-link" href="simple-100.html">
+                <img src="../assets/concepts/100day/simple-100/simple-100.jpg" alt="100일 심플백일상">
+                <div class="concept-card-body">
+                    <h3>심플백일상</h3>
+                    <p>과하지 않게 백일의 의미를 담는 구성입니다.</p>
+                    <span class="concept-more">컨셉 자세히 보기 →</span>
+                </div>
+            </a>
+            <a class="concept-card concept-card-link" href="toy-drawer.html">
+                <img src="../assets/concepts/100day/toy-drawer/toy-drawer.jpg" alt="100일 인형서랍 컨셉">
+                <div class="concept-card-body">
+                    <h3>인형서랍</h3>
+                    <p>장난감 서랍 속에 들어간 듯한 아기자기한 컨셉입니다.</p>
+                    <span class="concept-more">컨셉 자세히 보기 →</span>
+                </div>
+            </a>
+            <a class="concept-card concept-card-link" href="animal-friends.html">
+                <img src="../assets/concepts/100day/animal-friends/animal-friends.jpg" alt="100일 동물친구들 컨셉">
+                <div class="concept-card-body">
+                    <h3>동물친구들</h3>
+                    <p>동물 친구들과 함께하는 따뜻한 컨셉입니다.</p>
+                    <span class="concept-more">컨셉 자세히 보기 →</span>
+                </div>
+            </a>
+            <a class="concept-card concept-card-link" href="gyul.html">
+                <img src="../assets/concepts/100day/gyul/gyul.jpg" alt="100일 귤 컨셉">
+                <div class="concept-card-body">
+                    <h3>귤</h3>
+                    <p>상큼하고 귀여운 색감이 살아나는 컨셉입니다.</p>
+                    <span class="concept-more">컨셉 자세히 보기 →</span>
+                </div>
+            </a>
+            <a class="concept-card concept-card-link" href="daisyday.html">
+                <img src="../assets/concepts/100day/daisyday/daisyday.jpg" alt="100일 데이지데이 컨셉">
+                <div class="concept-card-body">
+                    <h3>데이지데이</h3>
+                    <p>밝고 깨끗한 분위기로 사랑받는 컨셉입니다.</p>
+                    <span class="concept-more">컨셉 자세히 보기 →</span>
+                </div>
+            </a>
+            <a class="concept-card concept-card-link" href="flower-shop.html">
+                <img src="../assets/concepts/100day/flower-shop/flower-shop.jpg" alt="100일 화원 컨셉">
+                <div class="concept-card-body">
+                    <h3>화원</h3>
+                    <p>꽃이 가득한 공간에서 촬영하는 화사한 컨셉입니다.</p>
+                    <span class="concept-more">컨셉 자세히 보기 →</span>
+                </div>
+            </a>
+        </div>
+    </section>
+
+    <section class="age-section" id="200day">
+        <div class="section-title">
+            <h2>200일</h2>
+            <p>표정과 움직임이 더 살아나는 시기에 어울리는 컨셉들입니다.</p>
+        </div>
+        <div class="concept-grid">
+            <a class="concept-card concept-card-link" href="gyul.html">
+                <img src="../assets/concepts/200day/gyul/gyul.jpg" alt="200일 귤 컨셉">
+                <div class="concept-card-body">
+                    <h3>귤</h3>
+                    <p>상큼한 색감으로 귀여움이 돋보이는 컨셉입니다.</p>
+                    <span class="concept-more">컨셉 자세히 보기 →</span>
+                </div>
+            </a>
+            <a class="concept-card concept-card-link" href="daisyday.html">
+                <img src="../assets/concepts/200day/daisyday/daisyday.jpg" alt="200일 데이지데이 컨셉">
+                <div class="concept-card-body">
+                    <h3>데이지데이</h3>
+                    <p>밝고 깨끗한 분위기를 좋아하는 가족에게 잘 어울립니다.</p>
+                    <span class="concept-more">컨셉 자세히 보기 →</span>
+                </div>
+            </a>
+            <a class="concept-card concept-card-link" href="bath.html">
+                <img src="../assets/concepts/200day/bath/bath.jpg" alt="200일 목욕 컨셉">
+                <div class="concept-card-body">
+                    <h3>목욕</h3>
+                    <p>아기의 장난스러운 표정이 잘 살아나는 컨셉입니다.</p>
+                    <span class="concept-more">컨셉 자세히 보기 →</span>
+                </div>
+            </a>
+            <a class="concept-card concept-card-link" href="bed.html">
+                <img src="../assets/concepts/200day/bed/bed.jpg" alt="200일 침대 컨셉">
+                <div class="concept-card-body">
+                    <h3>침대</h3>
+                    <p>포근하고 자연스러운 분위기의 컨셉입니다.</p>
+                    <span class="concept-more">컨셉 자세히 보기 →</span>
+                </div>
+            </a>
+            <a class="concept-card concept-card-link" href="picnic.html">
+                <img src="../assets/concepts/200day/picnic/picnic.jpg" alt="200일 피크닉 컨셉">
+                <div class="concept-card-body">
+                    <h3>피크닉</h3>
+                    <p>따뜻한 나들이 분위기를 담은 컨셉입니다.</p>
+                    <span class="concept-more">컨셉 자세히 보기 →</span>
+                </div>
+            </a>
+            <a class="concept-card concept-card-link" href="pink-shower.html">
+                <img src="../assets/concepts/200day/pink-shower/pink-shower.jpg" alt="200일 핑크샤워 컨셉">
+                <div class="concept-card-body">
+                    <h3>핑크샤워</h3>
+                    <p>부드럽고 사랑스러운 색감이 돋보이는 컨셉입니다.</p>
+                    <span class="concept-more">컨셉 자세히 보기 →</span>
+                </div>
+            </a>
+            <a class="concept-card concept-card-link" href="bear.html">
+                <img src="../assets/concepts/200day/bear/bear.jpg" alt="200일 곰돌이 컨셉">
+                <div class="concept-card-body">
+                    <h3>곰돌이</h3>
+                    <p>포근한 인형 같은 분위기의 컨셉입니다.</p>
+                    <span class="concept-more">컨셉 자세히 보기 →</span>
+                </div>
+            </a>
+            <a class="concept-card concept-card-link" href="flowerpot-daisy.html">
+                <img src="../assets/concepts/200day/flowerpot-daisy/flowerpot-daisy.jpg" alt="200일 꽃화분 데이지 컨셉">
+                <div class="concept-card-body">
+                    <h3>꽃화분 데이지</h3>
+                    <p>아기의 귀여운 비율이 잘 살아나는 컨셉입니다.</p>
+                    <span class="concept-more">컨셉 자세히 보기 →</span>
+                </div>
+            </a>
+            <a class="concept-card concept-card-link" href="flowerpot-daisy.html">
+                <img src="../assets/concepts/200day/flowerpot-lily/flowerpot-lily.jpg" alt="200일 꽃화분 은방울 컨셉">
+                <div class="concept-card-body">
+                    <h3>꽃화분 은방울</h3>
+                    <p>꽃화분 컨셉의 은방울 베리에이션입니다.</p>
+                    <span class="concept-more">컨셉 자세히 보기 →</span>
+                </div>
+            </a>
+            <a class="concept-card concept-card-link" href="flower-shop.html">
+                <img src="../assets/concepts/200day/flower-shop/flower-shop.jpg" alt="200일 화원 컨셉">
+                <div class="concept-card-body">
+                    <h3>화원</h3>
+                    <p>꽃과 함께 밝고 화사하게 남기는 컨셉입니다.</p>
+                    <span class="concept-more">컨셉 자세히 보기 →</span>
+                </div>
+            </a>
+        </div>
+    </section>
+
+    <section class="age-section" id="300day">
+        <div class="section-title">
+            <h2>300일</h2>
+            <p>앉고 서고 움직임이 풍부해지는 시기에 잘 어울리는 컨셉들입니다.</p>
+        </div>
+        <div class="concept-grid">
+            <a class="concept-card concept-card-link" href="giraffe.html">
+                <img src="../assets/concepts/300day/giraffe/giraffe.jpg" alt="300일 기린 컨셉">
+                <div class="concept-card-body">
+                    <h3>기린</h3>
+                    <p>귀여운 동물 분위기가 살아나는 컨셉입니다.</p>
+                    <span class="concept-more">컨셉 자세히 보기 →</span>
+                </div>
+            </a>
+            <a class="concept-card concept-card-link" href="flower-dress.html">
+                <img src="../assets/concepts/300day/flower-dress/flower-dress.jpg" alt="300일 꽃드레스 컨셉">
+                <div class="concept-card-body">
+                    <h3>꽃드레스</h3>
+                    <p>화사하고 사랑스러운 분위기의 컨셉입니다.</p>
+                    <span class="concept-more">컨셉 자세히 보기 →</span>
+                </div>
+            </a>
+            <a class="concept-card concept-card-link" href="drive.html">
+                <img src="../assets/concepts/300day/drive/drive.jpg" alt="300일 드라이브 컨셉">
+                <div class="concept-card-body">
+                    <h3>드라이브</h3>
+                    <p>작은 자동차와 함께하는 경쾌한 컨셉입니다.</p>
+                    <span class="concept-more">컨셉 자세히 보기 →</span>
+                </div>
+            </a>
+            <a class="concept-card concept-card-link" href="rainy-day.html">
+                <img src="../assets/concepts/300day/rainy-day/rainy-day.jpg" alt="300일 비온날 컨셉">
+                <div class="concept-card-body">
+                    <h3>비온날</h3>
+                    <p>우산과 빗방울 분위기를 담은 리베의 감성 컨셉입니다.</p>
+                    <span class="concept-more">컨셉 자세히 보기 →</span>
+                </div>
+            </a>
+            <a class="concept-card concept-card-link" href="sebommaru.html">
+                <img src="../assets/concepts/300day/sebommaru/sebommaru.jpg" alt="300일 세봄마루 컨셉">
+                <div class="concept-card-body">
+                    <h3>세봄마루</h3>
+                    <p>한복과 잘 어울리는 차분한 분위기의 컨셉입니다.</p>
+                    <span class="concept-more">컨셉 자세히 보기 →</span>
+                </div>
+            </a>
+            <a class="concept-card concept-card-link" href="cake.html">
+                <img src="../assets/concepts/300day/cake/cake.jpg" alt="300일 케익 컨셉">
+                <div class="concept-card-body">
+                    <h3>케익</h3>
+                    <p>기념일의 사랑스러운 분위기를 담는 컨셉입니다.</p>
+                    <span class="concept-more">컨셉 자세히 보기 →</span>
+                </div>
+            </a>
+            <a class="concept-card concept-card-link" href="panorama.html">
+                <img src="../assets/concepts/300day/panorama/panorama.jpg" alt="300일 파노라마 컨셉">
+                <div class="concept-card-body">
+                    <h3>파노라마</h3>
+                    <p>넓은 장면감이 특징인 합성형 컨셉입니다.</p>
+                    <span class="concept-more">컨셉 자세히 보기 →</span>
+                </div>
+            </a>
+            <a class="concept-card concept-card-link" href="hanbok-traditional.html">
+                <img src="../assets/concepts/300day/hanbok-traditional/hanbok-traditional.jpg" alt="300일 한복 전통 컨셉">
+                <div class="concept-card-body">
+                    <h3>한복 전통</h3>
+                    <p>전통적인 분위기로 남기는 한복 컨셉입니다.</p>
+                    <span class="concept-more">컨셉 자세히 보기 →</span>
+                </div>
+            </a>
+            <a class="concept-card concept-card-link" href="gyul.html">
+                <img src="../assets/concepts/300day/gyul/gyul.jpg" alt="300일 귤 컨셉">
+                <div class="concept-card-body">
+                    <h3>귤</h3>
+                    <p>상큼하고 귀여운 색감이 살아나는 컨셉입니다.</p>
+                    <span class="concept-more">컨셉 자세히 보기 →</span>
+                </div>
+            </a>
+            <a class="concept-card concept-card-link" href="daisyday.html">
+                <img src="../assets/concepts/300day/daisyday/daisyday.jpg" alt="300일 데이지데이 컨셉">
+                <div class="concept-card-body">
+                    <h3>데이지데이</h3>
+                    <p>밝고 깨끗한 분위기로 사랑받는 컨셉입니다.</p>
+                    <span class="concept-more">컨셉 자세히 보기 →</span>
+                </div>
+            </a>
+            <a class="concept-card concept-card-link" href="picnic.html">
+                <img src="../assets/concepts/300day/picnic/picnic.jpg" alt="300일 피크닉 컨셉">
+                <div class="concept-card-body">
+                    <h3>피크닉</h3>
+                    <p>따뜻한 나들이 분위기를 담은 컨셉입니다.</p>
+                    <span class="concept-more">컨셉 자세히 보기 →</span>
+                </div>
+            </a>
+            <a class="concept-card concept-card-link" href="pink-shower.html">
+                <img src="../assets/concepts/300day/pink-shower/pink-shower.jpg" alt="300일 핑크샤워 컨셉">
+                <div class="concept-card-body">
+                    <h3>핑크샤워</h3>
+                    <p>부드럽고 사랑스러운 색감의 컨셉입니다.</p>
+                    <span class="concept-more">컨셉 자세히 보기 →</span>
+                </div>
+            </a>
+            <a class="concept-card concept-card-link" href="libe-fruit.html">
+                <img src="../assets/concepts/300day/libe-fruit/libe-fruit.jpg" alt="300일 리베청과 컨셉">
+                <div class="concept-card-body">
+                    <h3>리베청과</h3>
+                    <p>과일가게 분위기를 리베답게 풀어낸 컨셉입니다.</p>
+                    <span class="concept-more">컨셉 자세히 보기 →</span>
+                </div>
+            </a>
+        </div>
+    </section>
+
+    <section class="age-section" id="family">
+        <div class="section-title">
+            <h2>가족사진</h2>
+            <p>아기와 가족이 함께 남기는 사진입니다.</p>
+        </div>
+        <div class="concept-grid">
+            <a class="concept-card concept-card-link" href="family.html">
+                <img src="../assets/concepts/family/family.jpg" alt="스튜디오리베 가족사진">
+                <div class="concept-card-body">
+                    <h3>가족사진</h3>
+                    <p>아기만이 아니라 함께한 가족의 분위기까지 자연스럽게 담습니다.</p>
+                    <span class="concept-more">컨셉 자세히 보기 →</span>
+                </div>
+            </a>
+        </div>
+    </section>
+
+    <section class="age-section" id="maternity">
+        <div class="section-title">
+            <h2>만삭사진</h2>
+            <p>아기를 기다리는 시간의 분위기를 차분하게 남깁니다.</p>
+        </div>
+        <div class="concept-grid">
+            <a class="concept-card concept-card-link" href="maternity.html">
+                <img src="../assets/concepts/maternity/maternity.jpg" alt="스튜디오리베 만삭사진">
+                <div class="concept-card-body">
+                    <h3>만삭사진</h3>
+                    <p>가족이 시작되기 전의 기다림을 따뜻한 분위기로 기록합니다.</p>
+                    <span class="concept-more">컨셉 자세히 보기 →</span>
+                </div>
+            </a>
+        </div>
+    </section>
+
+</div>
+
+</body>
+</html>

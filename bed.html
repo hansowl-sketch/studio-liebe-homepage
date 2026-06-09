@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>침대 컨셉 | 스튜디오리베</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo", "Noto Sans KR", sans-serif;
+      background: #faf7f4;
+      color: #222;
+      line-height: 1.75;
+      -webkit-font-smoothing: antialiased;
+      word-break: keep-all;
+    }
+
+    .page {
+      width: min(100%, 980px);
+      margin: 0 auto;
+      padding: 32px 18px 80px;
+    }
+
+    .back-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      margin-bottom: 30px;
+      color: #8a7364;
+      text-decoration: none;
+      font-size: 18px;
+      font-weight: 800;
+    }
+
+    .hero-image {
+      width: 100%;
+      margin-bottom: 34px;
+      overflow: hidden;
+      border-radius: 32px;
+      background: #eee8e2;
+    }
+
+    .hero-image img {
+      display: block;
+      width: 100%;
+      height: auto;
+      transform: scale(1.08);
+      transform-origin: center center;
+    }
+
+    .concept-title {
+      margin: 0 0 18px;
+      font-size: clamp(42px, 8vw, 72px);
+      line-height: 1.06;
+      letter-spacing: -0.07em;
+      font-weight: 900;
+    }
+
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 28px;
+    }
+
+    .tag {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 10px 18px;
+      border-radius: 999px;
+      background: #efe8df;
+      color: #222;
+      font-weight: 900;
+      font-size: 18px;
+    }
+
+    .intro {
+      margin: 0 0 54px;
+      color: #4d4d4d;
+      font-size: clamp(19px, 2.5vw, 25px);
+      line-height: 1.95;
+      letter-spacing: -0.04em;
+    }
+
+    .section {
+      margin-top: 58px;
+    }
+
+    .section h2 {
+      margin: 0 0 22px;
+      font-size: clamp(30px, 5.5vw, 46px);
+      line-height: 1.2;
+      letter-spacing: -0.06em;
+      font-weight: 900;
+    }
+
+    .section p {
+      margin: 0;
+      color: #4d4d4d;
+      font-size: clamp(18px, 2.4vw, 24px);
+      line-height: 1.95;
+      letter-spacing: -0.04em;
+    }
+
+    .section p + p {
+      margin-top: 18px;
+    }
+
+    .point-list {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 14px;
+      margin-top: 24px;
+    }
+
+    .point-card {
+      padding: 22px 20px;
+      border-radius: 24px;
+      background: #fff;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.055);
+    }
+
+    .point-card strong {
+      display: block;
+      margin-bottom: 8px;
+      font-size: 20px;
+      line-height: 1.35;
+      letter-spacing: -0.04em;
+    }
+
+    .point-card span {
+      display: block;
+      color: #666;
+      font-size: 17px;
+      line-height: 1.75;
+      letter-spacing: -0.03em;
+    }
+
+    .gallery {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 18px;
+      margin-top: 26px;
+    }
+
+    .gallery img {
+      display: block;
+      width: 100%;
+      aspect-ratio: 1 / 1;
+      object-fit: cover;
+      object-position: center;
+      border-radius: 28px;
+      background: #eee8e2;
+      box-shadow: 0 10px 28px rgba(0, 0, 0, 0.06);
+    }
+
+    .cta {
+      margin-top: 70px;
+      padding: 34px 22px;
+      border-radius: 32px;
+      background: #fff;
+      text-align: center;
+      box-shadow: 0 12px 34px rgba(0, 0, 0, 0.065);
+    }
+
+    .cta h2 {
+      margin: 0 0 14px;
+      font-size: clamp(28px, 5vw, 40px);
+      line-height: 1.25;
+      letter-spacing: -0.06em;
+    }
+
+    .cta p {
+      margin: 0 0 24px;
+      color: #666;
+      font-size: 18px;
+      line-height: 1.8;
+      letter-spacing: -0.03em;
+    }
+
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 220px;
+      padding: 16px 28px;
+      border-radius: 999px;
+      background: #b2865f;
+      color: #fff;
+      text-decoration: none;
+      font-size: 20px;
+      font-weight: 900;
+      box-shadow: 0 10px 24px rgba(137, 96, 61, 0.28);
+    }
+
+    @media (min-width: 760px) {
+      .page {
+        padding: 44px 34px 96px;
+      }
+
+      .point-list {
+        grid-template-columns: repeat(3, 1fr);
+      }
+
+      .gallery {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 22px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main class="page">
+    <a href="concepts.html" class="back-link">← 컨셉 목록으로 돌아가기</a>
+
+    <div class="hero-image">
+      <img src="../assets/concepts/200day/bed/bed.jpg" alt="침대 컨셉 대표 사진" />
+    </div>
+
+    <h1 class="concept-title">침대</h1>
+
+    <div class="tags" aria-label="침대 추천 시기">
+      <span class="tag">200일 추천</span>
+      <span class="tag">포근한 분위기</span>
+      <span class="tag">흑백 추천</span>
+    </div>
+
+    <p class="intro">
+      침대컨셉은 김작가가 가장 애정하는 컨셉 중 하나입니다.
+      실제 침대가 없는 리베에서, 아기가 포근한 침대 위에 있는 듯한 장면을 상상하며 만들었습니다.
+    </p>
+
+    <section class="section">
+      <h2>침대처럼 보이길 바라며</h2>
+      <p>
+        리베에는 실제 침대가 없지만, 침대처럼 포근하고 깨끗한 분위기를 만들고 싶었습니다. 아기가 블루머만 입고 뜨개이불을 감싸고 있는 장면을 떠올리며 구성한 컨셉입니다.
+      </p>
+      <p>
+        특히 처음 상상할 때는 흑백사진의 느낌이 강했습니다. 마치 기저귀 광고 속 아기처럼, 군더더기 없이 순수하고 포근한 모습을 담고 싶었습니다.
+      </p>
+    </section>
+
+    <section class="section">
+      <h2>이런 점이 좋아요</h2>
+      <div class="point-list">
+        <div class="point-card">
+          <strong>포근한 뜨개이불</strong>
+          <span>아기를 부드럽게 감싸주는 이불 느낌이 깨끗하고 따뜻하게 남습니다.</span>
+        </div>
+        <div class="point-card">
+          <strong>순수한 분위기</strong>
+          <span>과한 소품보다 아기의 얼굴과 몸짓이 먼저 보이는 컨셉입니다.</span>
+        </div>
+        <div class="point-card">
+          <strong>흑백으로도 예쁜 컨셉</strong>
+          <span>흑백으로 남겼을 때 포근하고 클래식한 느낌이 특히 잘 살아납니다.</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>이런 가족에게 추천해요</h2>
+      <p>
+        포근하고 깨끗한 분위기의 사진을 좋아하거나, 아기의 순수한 모습을 담고 싶은 가족에게 추천합니다. 기저귀 광고 속 아기처럼 담백하고 사랑스러운 느낌을 원하신다면 침대컨셉이 잘 어울립니다.
+      </p>
+    </section>
+
+    <section class="section" aria-label="침대 컨셉 사진 갤러리">
+      <h2>컨셉 사진 더보기</h2>
+      <div class="gallery">
+        <img src="../assets/concepts/200day/bed/001.jpg" alt="침대 컨셉 사진 1" loading="lazy" />
+        <img src="../assets/concepts/200day/bed/002.jpg" alt="침대 컨셉 사진 2" loading="lazy" />
+        <img src="../assets/concepts/200day/bed/003.jpg" alt="침대 컨셉 사진 3" loading="lazy" />
+        <img src="../assets/concepts/200day/bed/004.jpg" alt="침대 컨셉 사진 4" loading="lazy" />
+        <img src="../assets/concepts/200day/bed/005.jpg" alt="침대 컨셉 사진 5" loading="lazy" />
+      </div>
+    </section>
+
+    <section class="cta">
+      <h2>침대컨셉이 마음에 든다면</h2>
+      <p>아기의 시기와 함께 촬영하고 싶은 컨셉을 알려주세요. 가능한 구성과 어울리는 조합을 차분히 안내해드릴게요.</p>
+      <a href="http://pf.kakao.com/_xcfcFd/chat" class="button" target="_blank" rel="noopener noreferrer">문의하기</a>
+    </section>
+  </main>
+</body>
+</html>

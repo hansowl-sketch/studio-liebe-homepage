@@ -1,0 +1,278 @@
+
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>화원 컨셉 | 스튜디오리베</title>
+  <style>
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo", "Noto Sans KR", sans-serif;
+      background: #faf7f4;
+      color: #222;
+      line-height: 1.75;
+      -webkit-font-smoothing: antialiased;
+      word-break: keep-all;
+    }
+
+    .page {
+      width: min(100%, 980px);
+      margin: 0 auto;
+      padding: 32px 18px 80px;
+    }
+
+    .back-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      margin-bottom: 30px;
+      color: #8a7364;
+      text-decoration: none;
+      font-size: 18px;
+      font-weight: 800;
+    }
+
+    .hero-image {
+      width: 100%;
+      margin-bottom: 34px;
+      overflow: hidden;
+      border-radius: 32px;
+      background: #eee8e2;
+    }
+
+    .hero-image img {
+      display: block;
+      width: 100%;
+      height: auto;
+      object-fit: contain;
+    }
+
+    .concept-title {
+      margin: 0 0 18px;
+      font-size: clamp(42px, 8vw, 72px);
+      line-height: 1.06;
+      letter-spacing: -0.07em;
+      font-weight: 900;
+    }
+
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 28px;
+    }
+
+    .tag {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 10px 18px;
+      border-radius: 999px;
+      background: #efe8df;
+      color: #222;
+      font-weight: 900;
+      font-size: 18px;
+    }
+
+    .intro {
+      margin: 0 0 54px;
+      color: #4d4d4d;
+      font-size: clamp(19px, 2.5vw, 25px);
+      line-height: 1.95;
+      letter-spacing: -0.04em;
+    }
+
+    .section { margin-top: 58px; }
+
+    .section h2 {
+      margin: 0 0 22px;
+      font-size: clamp(30px, 5.5vw, 46px);
+      line-height: 1.2;
+      letter-spacing: -0.06em;
+      font-weight: 900;
+    }
+
+    .section p {
+      margin: 0;
+      color: #4d4d4d;
+      font-size: clamp(18px, 2.4vw, 24px);
+      line-height: 1.95;
+      letter-spacing: -0.04em;
+    }
+
+    .section p + p { margin-top: 18px; }
+
+    .point-list {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 14px;
+      margin-top: 24px;
+    }
+
+    .point-card {
+      padding: 22px 20px;
+      border-radius: 24px;
+      background: #fff;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.055);
+    }
+
+    .point-card strong {
+      display: block;
+      margin-bottom: 8px;
+      font-size: 20px;
+      line-height: 1.35;
+      letter-spacing: -0.04em;
+    }
+
+    .point-card span {
+      display: block;
+      color: #666;
+      font-size: 17px;
+      line-height: 1.75;
+      letter-spacing: -0.03em;
+    }
+
+    .gallery {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 18px;
+      margin-top: 26px;
+    }
+
+    .gallery img {
+      display: block;
+      width: 100%;
+      aspect-ratio: 1 / 1;
+      object-fit: cover;
+      object-position: center;
+      border-radius: 28px;
+      background: #eee8e2;
+      box-shadow: 0 10px 28px rgba(0, 0, 0, 0.06);
+    }
+
+    .cta {
+      margin-top: 70px;
+      padding: 34px 22px;
+      border-radius: 32px;
+      background: #fff;
+      text-align: center;
+      box-shadow: 0 12px 34px rgba(0, 0, 0, 0.065);
+    }
+
+    .cta h2 {
+      margin: 0 0 14px;
+      font-size: clamp(28px, 5vw, 40px);
+      line-height: 1.25;
+      letter-spacing: -0.06em;
+    }
+
+    .cta p {
+      margin: 0 0 24px;
+      color: #666;
+      font-size: 18px;
+      line-height: 1.8;
+      letter-spacing: -0.03em;
+    }
+
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 220px;
+      padding: 16px 28px;
+      border-radius: 999px;
+      background: #b2865f;
+      color: #fff;
+      text-decoration: none;
+      font-size: 20px;
+      font-weight: 900;
+      box-shadow: 0 10px 24px rgba(137, 96, 61, 0.28);
+    }
+
+    @media (min-width: 760px) {
+      .page { padding: 44px 34px 96px; }
+      .point-list { grid-template-columns: repeat(3, 1fr); }
+      .gallery { grid-template-columns: repeat(2, 1fr); gap: 22px; }
+    }
+  </style>
+</head>
+<body>
+  <main class="page">
+    <a href="concepts.html" class="back-link">← 컨셉 목록으로 돌아가기</a>
+
+    <div class="hero-image">
+      <img src="../assets/concepts/100day/flower-shop/flower-shop.jpg" alt="화원 컨셉 대표 사진" />
+    </div>
+
+    <h1 class="concept-title">화원</h1>
+
+    <div class="tags" aria-label="화원 추천 시기">
+      <span class="tag">100일 추천</span>
+      <span class="tag">200일 가능</span>
+      <span class="tag">화사한 분위기</span>
+    </div>
+
+    <p class="intro">
+      화원 컨셉은 꽃이 가득한 공간 안에서 아기의 밝고 사랑스러운 모습을 담는 컨셉입니다.
+      화사하지만 과하지 않게, 아기의 표정과 분위기가 먼저 보이도록 정리했습니다.
+    </p>
+
+    <section class="section">
+      <h2>꽃이 많은데도 차분하게</h2>
+      <p>
+        꽃을 많이 사용하는 컨셉은 자칫하면 배경이 먼저 보일 수 있습니다. 그래서 화원 컨셉은 꽃의 풍성함은 살리되, 아기가 사진의 중심에 남도록 톤과 배치를 차분하게 맞춘 컨셉입니다.
+      </p>
+      <p>
+        밝은 꽃과 부드러운 색감 덕분에 사진 전체가 산뜻하게 남고, 100일처럼 작은 시기에도 200일처럼 표정이 살아나는 시기에도 자연스럽게 어울립니다.
+      </p>
+    </section>
+
+    <section class="section">
+      <h2>이런 점이 좋아요</h2>
+      <div class="point-list">
+        <div class="point-card">
+          <strong>화사한 꽃 분위기</strong>
+          <span>꽃이 주는 밝고 따뜻한 느낌을 아기사진 안에 자연스럽게 담습니다.</span>
+        </div>
+        <div class="point-card">
+          <strong>부담스럽지 않은 배경</strong>
+          <span>장식은 풍성하지만 사진의 중심은 아기의 얼굴과 표정에 머물도록 구성했습니다.</span>
+        </div>
+        <div class="point-card">
+          <strong>밝은 성장사진</strong>
+          <span>100일과 200일 시기의 사랑스러운 분위기를 산뜻하게 남기기 좋습니다.</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>이런 가족에게 추천해요</h2>
+      <p>
+        꽃이 있는 밝은 분위기를 좋아하거나, 너무 심플한 배경보다는 조금 더 화사한 컨셉을 원하는 가족에게 추천합니다. 아기의 귀여운 표정과 꽃의 분위기가 함께 남는 사진을 원한다면 잘 어울리는 컨셉입니다.
+      </p>
+    </section>
+
+    <section class="section" aria-label="화원 컨셉 사진 갤러리">
+      <h2>컨셉 사진 더보기</h2>
+      <div class="gallery">
+        <img src="../assets/concepts/100day/flower-shop/001.jpg" alt="화원 컨셉 사진 1" loading="lazy" />
+        <img src="../assets/concepts/100day/flower-shop/002.jpg" alt="화원 컨셉 사진 2" loading="lazy" />
+        <img src="../assets/concepts/100day/flower-shop/003.jpg" alt="화원 컨셉 사진 3" loading="lazy" />
+        <img src="../assets/concepts/100day/flower-shop/004.jpg" alt="화원 컨셉 사진 4" loading="lazy" />
+        <img src="../assets/concepts/100day/flower-shop/005.jpg" alt="화원 컨셉 사진 5" loading="lazy" />
+        <img src="../assets/concepts/100day/flower-shop/006.jpg" alt="화원 컨셉 사진 6" loading="lazy" />
+      </div>
+    </section>
+
+    <section class="cta">
+      <h2>화원이 마음에 든다면</h2>
+      <p>아기의 시기와 함께 촬영하고 싶은 컨셉을 알려주세요. 가능한 구성과 어울리는 조합을 차분히 안내해드릴게요.</p>
+      <a href="http://pf.kakao.com/_xcfcFd/chat" class="button" target="_blank" rel="noopener noreferrer">문의하기</a>
+    </section>
+  </main>
+</body>
+</html>

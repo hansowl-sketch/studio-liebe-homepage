@@ -1,0 +1,286 @@
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>파노라마 컨셉 | 스튜디오리베</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo", "Noto Sans KR", sans-serif;
+      background: #faf7f4;
+      color: #222;
+      line-height: 1.75;
+      -webkit-font-smoothing: antialiased;
+      word-break: keep-all;
+    }
+
+    .page {
+      width: min(100%, 980px);
+      margin: 0 auto;
+      padding: 32px 18px 80px;
+    }
+
+    .back-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      margin-bottom: 30px;
+      color: #8a7364;
+      text-decoration: none;
+      font-size: 18px;
+      font-weight: 800;
+    }
+
+    .hero-image {
+      width: 100%;
+      margin-bottom: 34px;
+      overflow: hidden;
+      border-radius: 32px;
+      background: #eee8e2;
+    }
+
+    .hero-image img {
+      display: block;
+      width: 100%;
+      height: auto;
+      transform: scale(1.08);
+      transform-origin: center center;
+    }
+
+    .concept-title {
+      margin: 0 0 18px;
+      font-size: clamp(42px, 8vw, 72px);
+      line-height: 1.06;
+      letter-spacing: -0.07em;
+      font-weight: 900;
+    }
+
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 28px;
+    }
+
+    .tag {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 10px 18px;
+      border-radius: 999px;
+      background: #efe8df;
+      color: #222;
+      font-weight: 900;
+      font-size: 18px;
+    }
+
+    .intro {
+      margin: 0 0 54px;
+      color: #4d4d4d;
+      font-size: clamp(19px, 2.5vw, 25px);
+      line-height: 1.95;
+      letter-spacing: -0.04em;
+    }
+
+    .section {
+      margin-top: 58px;
+    }
+
+    .section h2 {
+      margin: 0 0 22px;
+      font-size: clamp(30px, 5.5vw, 46px);
+      line-height: 1.2;
+      letter-spacing: -0.06em;
+      font-weight: 900;
+    }
+
+    .section p {
+      margin: 0;
+      color: #4d4d4d;
+      font-size: clamp(18px, 2.4vw, 24px);
+      line-height: 1.95;
+      letter-spacing: -0.04em;
+    }
+
+    .section p + p {
+      margin-top: 18px;
+    }
+
+    .point-list {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 14px;
+      margin-top: 24px;
+    }
+
+    .point-card {
+      padding: 22px 20px;
+      border-radius: 24px;
+      background: #fff;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.055);
+    }
+
+    .point-card strong {
+      display: block;
+      margin-bottom: 8px;
+      font-size: 20px;
+      line-height: 1.35;
+      letter-spacing: -0.04em;
+    }
+
+    .point-card span {
+      display: block;
+      color: #666;
+      font-size: 17px;
+      line-height: 1.75;
+      letter-spacing: -0.03em;
+    }
+
+    .gallery {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 18px;
+      margin-top: 26px;
+    }
+
+    .gallery img {
+      display: block;
+      width: 100%;
+      height: auto;
+      border-radius: 28px;
+      background: #eee8e2;
+      box-shadow: 0 10px 28px rgba(0, 0, 0, 0.06);
+    }
+
+    .cta {
+      margin-top: 70px;
+      padding: 34px 22px;
+      border-radius: 32px;
+      background: #fff;
+      text-align: center;
+      box-shadow: 0 12px 34px rgba(0, 0, 0, 0.065);
+    }
+
+    .cta h2 {
+      margin: 0 0 14px;
+      font-size: clamp(28px, 5vw, 40px);
+      line-height: 1.25;
+      letter-spacing: -0.06em;
+    }
+
+    .cta p {
+      margin: 0 0 24px;
+      color: #666;
+      font-size: 18px;
+      line-height: 1.8;
+      letter-spacing: -0.03em;
+    }
+
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 220px;
+      padding: 16px 28px;
+      border-radius: 999px;
+      background: #b2865f;
+      color: #fff;
+      text-decoration: none;
+      font-size: 20px;
+      font-weight: 900;
+      box-shadow: 0 10px 24px rgba(137, 96, 61, 0.28);
+    }
+
+    @media (min-width: 760px) {
+      .page {
+        padding: 44px 34px 96px;
+      }
+
+      .point-list {
+        grid-template-columns: repeat(3, 1fr);
+      }
+
+      .gallery {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 22px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main class="page">
+    <a href="concepts.html" class="back-link">← 컨셉 목록으로 돌아가기</a>
+
+    <div class="hero-image">
+      <img src="../assets/concepts/300day/panorama/panorama.jpg" alt="파노라마 컨셉 대표 사진" />
+    </div>
+
+    <h1 class="concept-title">파노라마</h1>
+
+    <div class="tags" aria-label="파노라마 추천 시기">
+      <span class="tag">300일 추천</span>
+      <span class="tag">표정 기록</span>
+      <span class="tag">스테디셀러</span>
+    </div>
+
+    <p class="intro">
+      파노라마 컨셉은 아기의 다양한 표정과 행동을 한눈에 담아내기 좋은 컨셉이야. 깔끔한 배경과 귀여운 의상, 그리고 아기의 여러 모습이 어우러져 작은 인형들이 나란히 각자의 포즈를 취하고 있는 듯한 느낌을 만들어줘.
+    </p>
+
+    <section class="section">
+      <h2>다양한 모습을 한 장에</h2>
+      <p>
+        아기는 촬영하는 동안 정말 많은 표정과 행동을 보여줘. 웃기도 하고, 멍하니 바라보기도 하고, 장난스러운 표정을 짓기도 하지.
+      </p>
+      <p>
+        파노라마는 그런 순간들을 하나씩 모아 아기만의 작은 이야기를 만들어주는 컨셉이야.
+      </p>
+    </section>
+
+    <section class="section">
+      <h2>파노라마 컨셉의 매력</h2>
+      <div class="point-list">
+        <div class="point-card">
+          <strong>다양한 표정 기록</strong>
+          <span>한 가지 표정보다 여러 표정과 행동을 함께 담을 수 있어 더욱 특별한 기록이 됩니다.</span>
+        </div>
+        <div class="point-card">
+          <strong>깔끔한 구성</strong>
+          <span>배경과 의상이 단정해서 시선이 자연스럽게 아기에게 머무릅니다.</span>
+        </div>
+        <div class="point-card">
+          <strong>인형 같은 느낌</strong>
+          <span>여러 장면이 나란히 이어지며 마치 인형들이 각자의 포즈를 취하고 있는 듯한 분위기를 만들어줍니다.</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>남겨둘 이유가 충분한 컨셉</h2>
+      <p>
+        리베만의 고유한 컨셉은 아니지만, 촬영 자체에 스트레스가 적고 꾸준히 찾는 분들이 많은 컨셉이야. 그래서 지금도 리베에 남아있는 이유가 분명한 컨셉이기도 해.
+      </p>
+    </section>
+
+    <section class="section" aria-label="파노라마 컨셉 사진 갤러리">
+      <h2>컨셉 사진 더보기</h2>
+      <div class="gallery">
+        <img src="../assets/concepts/300day/panorama/001.jpg" alt="파노라마 컨셉 사진 1" loading="lazy" />
+        <img src="../assets/concepts/300day/panorama/002.jpg" alt="파노라마 컨셉 사진 2" loading="lazy" />
+      </div>
+    </section>
+
+    <section class="cta">
+      <h2>파노라마 컨셉이 마음에 든다면</h2>
+      <p>300일 시기의 아기와 특히 잘 어울리는 컨셉입니다. 다양한 표정과 행동을 남기고 싶은 가족들에게 추천드려요.</p>
+      <a href="http://pf.kakao.com/_xcfcFd/chat" class="button" target="_blank" rel="noopener noreferrer">문의하기</a>
+    </section>
+  </main>
+</body>
+</html>
