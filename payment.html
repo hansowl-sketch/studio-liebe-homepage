@@ -1,0 +1,579 @@
+
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>결제 안내 | 스튜디오리베</title>
+  <style>
+    *{box-sizing:border-box;margin:0;padding:0}
+    body{font-family:-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Noto Sans KR",sans-serif;background:#faf7f2;color:#2a2522;line-height:1.7}
+    a{color:inherit;text-decoration:none}
+    button{font-family:inherit}
+    .page{max-width:980px;margin:0 auto;padding:92px 18px 92px}
+    .top-nav{position:fixed;top:14px;left:50%;transform:translateX(-50%);z-index:100;display:flex;gap:8px;padding:8px;border-radius:999px;background:rgba(255,255,255,0.85);backdrop-filter:blur(12px);box-shadow:0 8px 24px rgba(0,0,0,0.08)}
+    .top-nav a{padding:10px 14px;border-radius:999px;color:#4a3b33;font-size:14px;font-weight:800;text-decoration:none;white-space:nowrap}
+    .top-nav a:hover{background:#f3ede5}
+    .hero{margin-bottom:32px}
+    .eyebrow{margin-bottom:12px;font-size:13px;font-weight:900;letter-spacing:.14em;color:#9b8f82}
+    h1{margin-bottom:16px;font-size:40px;line-height:1.18;letter-spacing:-.06em}
+    .intro{color:#5f5650;font-size:17px;line-height:1.85;max-width:760px}
+    .notice-box{margin-top:28px;padding:24px;border-radius:28px;background:#8b6f5a;color:#fff;box-shadow:0 12px 30px rgba(91,65,44,.12)}
+    .notice-box strong{display:block;margin-bottom:8px;font-size:21px;letter-spacing:-.04em}
+    .notice-box p{color:rgba(255,255,255,.88);line-height:1.8}
+    .notice-actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:18px}
+    .button{display:inline-flex;align-items:center;justify-content:center;min-height:48px;padding:0 20px;border-radius:999px;border:0;background:#fff7ec;color:#4a3b33;font-weight:900;cursor:pointer}
+    .button.secondary{background:rgba(255,255,255,.16);color:#fff;border:1px solid rgba(255,255,255,.36)}
+    .section{margin-top:54px}
+    .section-heading{margin-bottom:18px}
+    .section-heading .label{margin-bottom:8px;font-size:12px;font-weight:900;letter-spacing:.14em;color:#b08a74}
+    .section-heading h2{font-size:30px;line-height:1.25;letter-spacing:-.04em;margin-bottom:8px}
+    .section-heading p{color:#756a63;line-height:1.75}
+    .layout{display:grid;gap:18px}
+    .product-grid{display:grid;gap:14px}
+    .product-group{padding:18px;border-radius:30px;background:rgba(255,255,255,.46);border:1px solid rgba(90,70,54,.12)}
+    .product-group + .product-group{margin-top:18px}
+    .group-title{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:14px;padding:0 2px}
+    .group-title h3{font-size:22px;letter-spacing:-.04em;line-height:1.25}
+    .group-title span{font-size:12px;font-weight:900;letter-spacing:.1em;color:#b08a74;white-space:nowrap}
+    .group-desc{margin:-6px 2px 14px;color:#756a63;font-size:14px;line-height:1.65}
+    .product-card{padding:22px;border-radius:26px;background:#fffdf9;border:1px solid rgba(90,70,54,.12);box-shadow:0 10px 28px rgba(0,0,0,.035)}
+    .product-card + .product-card{margin-top:12px}
+    .product-card.option-card{padding:15px 15px;border-radius:20px;background:#f8f1ea;box-shadow:none;border:2px dashed rgba(138,91,72,.38);margin-left:22px}
+    .product-card.option-card .product-top{margin-bottom:8px}
+    .product-card.option-card h4{font-size:17px}
+    .product-card.option-card p{font-size:13px;line-height:1.55}
+    .product-card.option-card .price{font-size:19px}
+    .product-card.option-card .add-button{min-height:38px;margin-top:10px;font-size:13px;background:#ecdccf}
+    .product-top{display:flex;justify-content:space-between;gap:16px;align-items:flex-start;margin-bottom:12px}
+    .product-card h4{font-size:20px;line-height:1.3;letter-spacing:-.04em}
+    .product-card:not(.option-card){border-left:5px solid #c47b5f}
+    .product-card p{margin-top:4px;color:#776d66;font-size:14px;line-height:1.65}
+    .price{font-size:23px;font-weight:900;letter-spacing:-.04em;white-space:nowrap;color:#2f2925}
+    .add-button{width:100%;min-height:46px;margin-top:14px;border:0;border-radius:999px;background:#f2e5dc;color:#8a5b48;font-size:15px;font-weight:900;cursor:pointer}
+    .add-button:hover{background:#ead8cb}
+    .add-button.added{background:#8b6f5a;color:#fff;transform:scale(.98)}
+    .toast{position:fixed;left:50%;bottom:22px;z-index:250;transform:translate(-50%,20px);width:calc(100% - 36px);max-width:420px;padding:14px 18px;border-radius:999px;background:rgba(42,37,34,.92);color:#fff;text-align:center;font-size:14px;font-weight:900;opacity:0;pointer-events:none;transition:opacity .25s ease,transform .25s ease;box-shadow:0 12px 34px rgba(0,0,0,.18)}
+    .toast.active{opacity:1;transform:translate(-50%,0)}
+    .cart{position:sticky;top:90px;padding:24px;border-radius:28px;background:#fffaf6;border:2px solid #c47b5f;box-shadow:0 14px 32px rgba(0,0,0,.06)}
+    .cart h2{font-size:24px;letter-spacing:-.04em;margin-bottom:6px}
+    .cart-desc{color:#7a6f68;font-size:14px;line-height:1.65;margin-bottom:16px}
+    .cart-list{display:grid;gap:10px;margin-bottom:16px}
+    .empty{padding:18px;border-radius:18px;background:#f5eee7;color:#8a7c73;text-align:center;font-size:14px}
+    .cart-item{display:grid;grid-template-columns:1fr auto;gap:10px;align-items:center;padding:13px 0;border-bottom:1px solid rgba(90,70,54,.12)}
+    .cart-item strong{font-size:15px;letter-spacing:-.03em}
+    .cart-item span{color:#7a6f68;font-size:14px;font-weight:800}
+    .remove-button{grid-column:1 / -1;justify-self:start;border:0;background:transparent;color:#b26b50;font-size:13px;font-weight:900;cursor:pointer}
+    .total{display:flex;justify-content:space-between;align-items:flex-end;margin:18px 0 16px;padding-top:16px;border-top:2px solid rgba(90,70,54,.16)}
+    .total span{color:#70645d;font-weight:900}
+    .total strong{font-size:28px;letter-spacing:-.05em}
+    .pay-button{width:100%;min-height:54px;border:0;border-radius:999px;background:#8b6f5a;color:#fff;font-size:16px;font-weight:900;cursor:pointer}
+    .pay-button:disabled{background:#d4c8bd;color:#fff;cursor:not-allowed}
+    .cart-note{margin-top:12px;color:#8a7f78;font-size:13px;line-height:1.65;text-align:center}
+    .deposit-card{padding:28px 24px;border-radius:30px;background:#fffdf9;border:1px solid rgba(90,70,54,.12);box-shadow:0 10px 28px rgba(0,0,0,.04)}
+    .deposit-card .badge{display:inline-flex;margin-bottom:12px;padding:6px 11px;border-radius:999px;background:#f2e5dc;color:#a1644d;font-size:12px;font-weight:900}
+    .deposit-top{display:grid;gap:12px;margin-bottom:16px}
+    .deposit-card h3{font-size:25px;letter-spacing:-.04em;line-height:1.25}
+    .deposit-card p{color:#776d66;line-height:1.75}
+    .deposit-price{font-size:34px;line-height:1.1;font-weight:900;letter-spacing:-.04em;color:#2f2925}
+    .policy-grid{display:grid;gap:14px;margin-top:18px}
+    .policy-card{padding:20px;border-radius:24px;background:#fffdf9;border:1px solid rgba(90,70,54,.10)}
+    .policy-card h3{font-size:19px;margin-bottom:7px;letter-spacing:-.03em}
+    .policy-card p{color:#635950;line-height:1.8;font-size:14px}
+    .modal-backdrop{position:fixed;inset:0;z-index:200;display:none;align-items:center;justify-content:center;padding:22px;background:rgba(42,37,34,.48)}
+    .modal-backdrop.active{display:flex}
+    .modal{width:min(440px,100%);padding:28px 24px;border-radius:30px;background:#fffdf9;box-shadow:0 22px 70px rgba(0,0,0,.25)}
+    .modal h2{font-size:25px;letter-spacing:-.04em;margin-bottom:10px}
+    .modal p{color:#665c55;line-height:1.8;margin-bottom:18px}
+    .modal-actions{display:grid;gap:10px}
+    .modal .button{width:100%}
+    .modal .button.cancel{background:#f2ede7;color:#6d5f56}
+    @media (min-width:820px){
+      .page{padding:104px 28px 110px}
+      h1{font-size:56px}
+      .layout{grid-template-columns:1.15fr .85fr;align-items:start}
+      .product-grid{grid-template-columns:1fr}
+      .deposit-top{grid-template-columns:1fr auto;align-items:start}
+      .deposit-price{text-align:right}
+      .policy-grid{grid-template-columns:repeat(2,1fr)}
+    }
+  </style>
+</head>
+<body>
+  <nav class="top-nav">
+    <a href="index.html">홈</a>
+    <a href="concepts.html">컨셉</a>
+    <a href="price.html">가격</a>
+    <a href="http://pf.kakao.com/_xcfcFd/chat" target="_blank" rel="noopener noreferrer">문의</a>
+  </nav>
+
+  <main class="page">
+    <section class="hero">
+      <div class="eyebrow">PAYMENT GUIDE</div>
+      <h1>결제 안내</h1>
+      <p class="intro">
+        이 페이지는 카카오톡 상담을 통해 촬영 일정과 상품 구성이 확정된 고객님을 위한 결제 안내 페이지입니다.
+        아직 상담 전이라면 결제보다 먼저 문의를 남겨주세요. 아기의 시기와 원하시는 구성을 확인한 뒤, 가장 알맞은 방식으로 안내해드릴게요.
+      </p>
+      <div class="notice-box">
+        <strong>상담 후 예약이 확정된 경우에만 결제를 진행해주세요.</strong>
+        <p>
+          리베는 촬영일, 아기 개월 수, 선택 컨셉, 가족촬영 추가 여부에 따라 구성이 달라질 수 있습니다.
+          결제 전 카카오톡으로 최종 금액을 꼭 확인해주세요.
+        </p>
+        <div class="notice-actions">
+          <a href="http://pf.kakao.com/_xcfcFd/chat" class="button" target="_blank" rel="noopener noreferrer">카카오톡 상담하기</a>
+          <a href="price.html" class="button secondary">가격표 다시 보기</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-heading">
+        <div class="label">FULL PAYMENT</div>
+        <h2>전액 결제</h2>
+        <p>상담으로 확정된 상품과 옵션을 장바구니에 담아 총액을 확인해주세요.</p>
+      </div>
+
+      <div class="layout">
+        <div class="product-grid">
+          <div class="product-group">
+            <div class="group-title">
+              <h3>아기 촬영</h3>
+              <span>BABY</span>
+            </div>
+            <p class="group-desc">백일, 200일, 돌 시기에 가장 기본이 되는 촬영 상품입니다.</p>
+
+            <article class="product-card" data-name="아기 촬영 2컨셉" data-price="190000">
+              <div class="product-top">
+                <div><h4>2컨셉 기본 구성</h4><p>백일 · 200일 · 돌 기본 촬영 / 원본 전체 제공</p></div>
+                <div class="price">190,000원</div>
+              </div>
+              <button class="add-button" type="button">장바구니 담기</button>
+            </article>
+
+            <article class="product-card option-card" data-name="아기 컨셉 추가" data-price="95000" data-parent="아기 촬영 2컨셉">
+              <div class="product-top">
+                <div><h4>아기 컨셉 추가</h4><p>2컨셉에서 3컨셉 이상으로 진행할 때 추가</p></div>
+                <div class="price">95,000원</div>
+              </div>
+              <button class="add-button" type="button">장바구니 담기</button>
+            </article>
+
+            <article class="product-card option-card" data-name="앨범 패키지" data-price="300000" data-parent="아기 촬영 2컨셉">
+              <div class="product-top">
+                <div><h4>앨범 패키지</h4><p>아기 촬영 상품에 추가 가능 / 10p 앨범 · 11×14 액자 1개 · 8×10 액자 1개</p></div>
+                <div class="price">300,000원</div>
+              </div>
+              <button class="add-button" type="button">장바구니 담기</button>
+            </article>
+          </div>
+
+          <div class="product-group">
+            <div class="group-title">
+              <h3>성장 A</h3>
+              <span>GROWTH A</span>
+            </div>
+            <p class="group-desc">100일, 돌, 가족사진으로 구성된 기본 성장 패키지입니다.</p>
+
+            <article class="product-card" data-name="성장 A" data-price="670000">
+              <div class="product-top">
+                <div><h4>기본 구성</h4><p>100일 · 돌 · 가족사진 / 앨범 및 액자 포함</p></div>
+                <div class="price">670,000원</div>
+              </div>
+              <button class="add-button" type="button">장바구니 담기</button>
+            </article>
+
+            <article class="product-card option-card" data-name="성장 A 만삭 추가" data-price="120000" data-parent="성장 A">
+              <div class="product-top">
+                <div><h4>성장 A 만삭 추가</h4><p>성장 A 구성에 만삭 촬영을 추가할 때 선택</p></div>
+                <div class="price">120,000원</div>
+              </div>
+              <button class="add-button" type="button">장바구니 담기</button>
+            </article>
+
+            <article class="product-card option-card" data-name="성장 A 50일 추가" data-price="120000" data-parent="성장 A">
+              <div class="product-top">
+                <div><h4>성장 A 50일 추가</h4><p>성장 A 구성에 50일 촬영을 추가할 때 선택</p></div>
+                <div class="price">120,000원</div>
+              </div>
+              <button class="add-button" type="button">장바구니 담기</button>
+            </article>
+          </div>
+
+          <div class="product-group">
+            <div class="group-title">
+              <h3>성장 B</h3>
+              <span>GROWTH B</span>
+            </div>
+            <p class="group-desc">100일, 200일, 돌, 가족사진까지 포함된 추천 성장 패키지입니다.</p>
+
+            <article class="product-card" data-name="성장 B" data-price="870000">
+              <div class="product-top">
+                <div><h4>기본 구성</h4><p>100일 · 200일 · 돌 · 가족사진 / 앨범 및 액자 포함</p></div>
+                <div class="price">870,000원</div>
+              </div>
+              <button class="add-button" type="button">장바구니 담기</button>
+            </article>
+
+            <article class="product-card option-card" data-name="성장 B 만삭 추가" data-price="120000" data-parent="성장 B">
+              <div class="product-top">
+                <div><h4>성장 B 만삭 추가</h4><p>성장 B 구성에 만삭 촬영을 추가할 때 선택</p></div>
+                <div class="price">120,000원</div>
+              </div>
+              <button class="add-button" type="button">장바구니 담기</button>
+            </article>
+
+            <article class="product-card option-card" data-name="성장 B 50일 추가" data-price="120000" data-parent="성장 B">
+              <div class="product-top">
+                <div><h4>성장 B 50일 추가</h4><p>성장 B 구성에 50일 촬영을 추가할 때 선택</p></div>
+                <div class="price">120,000원</div>
+              </div>
+              <button class="add-button" type="button">장바구니 담기</button>
+            </article>
+          </div>
+
+          <div class="product-group">
+            <div class="group-title">
+              <h3>성장 원본형</h3>
+              <span>DATA</span>
+            </div>
+            <p class="group-desc">앨범과 액자보다 원본 전체 제공을 우선으로 원하는 가족을 위한 구성입니다.</p>
+
+            <article class="product-card" data-name="성장 원본형" data-price="500000">
+              <div class="product-top">
+                <div><h4>기본 구성</h4><p>3회 촬영 포함 / 각 시기 2컨셉 · 원본 전체 제공 · 앨범/액자 미포함</p></div>
+                <div class="price">500,000원</div>
+              </div>
+              <button class="add-button" type="button">장바구니 담기</button>
+            </article>
+
+            <article class="product-card option-card" data-name="성장 원본형 만삭 추가" data-price="120000" data-parent="성장 원본형">
+              <div class="product-top">
+                <div><h4>성장 원본형 만삭 추가</h4><p>성장 원본형 구성에 만삭 촬영을 추가할 때 선택</p></div>
+                <div class="price">120,000원</div>
+              </div>
+              <button class="add-button" type="button">장바구니 담기</button>
+            </article>
+
+            <article class="product-card option-card" data-name="성장 원본형 가족 촬영 추가" data-price="120000" data-parent="성장 원본형">
+              <div class="product-top">
+                <div><h4>성장 원본형 가족 촬영 추가</h4><p>성장 원본형 구성에 가족 촬영을 추가할 때 선택</p></div>
+                <div class="price">120,000원</div>
+              </div>
+              <button class="add-button" type="button">장바구니 담기</button>
+            </article>
+          </div>
+
+          <div class="product-group">
+            <div class="group-title">
+              <h3>단품 · 추가 촬영</h3>
+              <span>ADD-ON</span>
+            </div>
+            <p class="group-desc">상담 내용에 따라 단품 촬영 또는 함께 예약하는 추가 촬영으로 선택해주세요.</p>
+
+            <article class="product-card option-card" data-name="가족 촬영" data-price="150000">
+              <div class="product-top">
+                <div><h4>가족 촬영</h4><p>3인 기준 · 총 3포즈 · 수정본 3컷 / 인원 추가 시 1인당 30,000원</p></div>
+                <div class="price">150,000원</div>
+              </div>
+              <button class="add-button" type="button">장바구니 담기</button>
+            </article>
+
+            <article class="product-card option-card" data-name="만삭 촬영" data-price="150000">
+              <div class="product-top">
+                <div><h4>만삭 촬영</h4><p>컨셉당 30~40컷 · 원본 제공</p></div>
+                <div class="price">150,000원</div>
+              </div>
+              <button class="add-button" type="button">장바구니 담기</button>
+            </article>
+
+            <article class="product-card option-card" data-name="돌상 촬영" data-price="150000">
+              <div class="product-top">
+                <div><h4>돌상 촬영</h4><p>컨셉당 30~40컷 · 원본 제공</p></div>
+                <div class="price">150,000원</div>
+              </div>
+              <button class="add-button" type="button">장바구니 담기</button>
+            </article>
+          </div>
+
+          <div class="product-group">
+            <div class="group-title">
+              <h3>주니어 · 형제 촬영</h3>
+              <span>JUNIOR</span>
+            </div>
+            <p class="group-desc">단독 촬영인지, 다른 촬영과 함께 예약하는지에 따라 금액이 달라집니다.</p>
+
+            <article class="product-card option-card" data-name="주니어 · 형제 촬영 1컨셉" data-price="130000">
+              <div class="product-top">
+                <div><h4>주니어 · 형제 촬영 1컨셉</h4><p>단독 1컨셉 촬영 / 의상 고객 준비 · 컨셉당 30~40컷</p></div>
+                <div class="price">130,000원</div>
+              </div>
+              <button class="add-button" type="button">장바구니 담기</button>
+            </article>
+
+            <article class="product-card option-card" data-name="주니어 · 형제 촬영 할인 적용" data-price="95000" data-requires-cart="true">
+              <div class="product-top">
+                <div><h4>주니어 · 형제 촬영 할인 적용</h4><p>2컨셉 진행 또는 아기촬영 · 가족촬영 · 성장앨범 등과 함께 예약 시</p></div>
+                <div class="price">95,000원</div>
+              </div>
+              <button class="add-button" type="button">장바구니 담기</button>
+            </article>
+          </div>
+        </div>
+
+        <aside class="cart" aria-label="장바구니">
+          <h2>장바구니</h2>
+          <p class="cart-desc">상담으로 확정된 상품만 담아주세요. 금액이 다르다면 카카오톡으로 먼저 확인해주세요.</p>
+          <div class="cart-list" id="cartList">
+            <div class="empty">아직 담긴 상품이 없습니다.</div>
+          </div>
+          <div class="total">
+            <span>총 결제 금액</span>
+            <strong id="totalPrice">0원</strong>
+          </div>
+          <button class="pay-button" id="fullPayButton" type="button" disabled>전액 결제하기</button>
+          <p class="cart-note">현재 버튼은 결제 연결 전 시안입니다. 토스페이먼츠 연결 후 실제 결제로 이어집니다.</p>
+        </aside>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-heading">
+        <div class="label">RESERVATION DEPOSIT</div>
+        <h2>예약금 결제</h2>
+        <p>예약금은 다른 상품과 헷갈리지 않도록 별도 영역에 두었습니다.</p>
+      </div>
+      <article class="deposit-card">
+        <span class="badge">예약 확정 후 결제</span>
+        <div class="deposit-top">
+          <div>
+            <h3>예약금</h3>
+            <p>촬영 일정이 확정된 뒤 예약을 고정하기 위한 예약금입니다. 촬영 상품과 관계없이 5만원으로 동일합니다.</p>
+          </div>
+          <div class="deposit-price">50,000원</div>
+        </div>
+        <button class="pay-button" id="depositPayButton" type="button">예약금 결제하기</button>
+      </article>
+    </section>
+
+    <section class="section">
+      <div class="section-heading">
+        <div class="label">PAYMENT NOTE</div>
+        <h2>결제 전 확인해주세요</h2>
+      </div>
+      <div class="policy-grid">
+        <div class="policy-card"><h3>상담 후 결제</h3><p>촬영일과 구성이 확정되지 않은 상태에서는 결제를 진행하지 말아주세요. 먼저 카카오톡 상담을 통해 안내받으신 뒤 결제해주세요.</p></div>
+        <div class="policy-card"><h3>예약금 환불</h3><p>촬영 일주일 전까지 예약금 환불이 가능합니다. 촬영일이 예약일과 가까운 경우에는 입금 후 3일까지 전액 환불됩니다.</p></div>
+        <div class="policy-card"><h3>전액 결제</h3><p>전액 결제는 상담으로 확정된 상품과 옵션을 기준으로 진행해주세요. 결제 금액이 다르면 확인 과정이 필요할 수 있습니다.</p></div>
+        <div class="policy-card"><h3>환불 방식</h3><p>환불이 필요한 경우 결제 수단과 상황에 따라 카드 취소 또는 계좌이체 환불로 안내드릴 수 있습니다.</p></div>
+      </div>
+    </section>
+  </main>
+
+  <div class="toast" id="cartToast" aria-live="polite">장바구니에 담았어요.</div>
+  <div class="modal-backdrop" id="confirmModal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+    <div class="modal">
+      <h2 id="modalTitle">상담 후 예약을 완료하셨나요?</h2>
+      <p>
+        리베는 카카오톡 상담을 통해 촬영 일정과 상품 구성을 확정한 뒤 결제를 진행하고 있습니다.
+        아직 상담 전이라면 먼저 문의해주세요.
+      </p>
+      <div class="modal-actions">
+        <button class="button cancel" id="modalCancel" type="button">아직 상담 전이에요</button>
+        <button class="button" id="modalConfirm" type="button">상담 후 예약을 완료했습니다</button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const formatter = new Intl.NumberFormat('ko-KR');
+    const cart = [];
+    const dependencyMap = {
+      '아기 촬영 2컨셉':['아기 컨셉 추가','앨범 패키지'],
+      '성장 A':['성장 A 만삭 추가','성장 A 50일 추가'],
+      '성장 B':['성장 B 만삭 추가','성장 B 50일 추가'],
+      '성장 원본형':['성장 원본형 만삭 추가','성장 원본형 가족 촬영 추가']
+    };
+    const productButtons = new Map();
+    const cartList = document.getElementById('cartList');
+    const totalPrice = document.getElementById('totalPrice');
+    const fullPayButton = document.getElementById('fullPayButton');
+    const depositPayButton = document.getElementById('depositPayButton');
+    const cartToast = document.getElementById('cartToast');
+    let toastTimer;
+    function showToast(message){
+      cartToast.textContent = message;
+      cartToast.classList.add('active');
+      clearTimeout(toastTimer);
+      toastTimer = setTimeout(() => {
+        cartToast.classList.remove('active');
+      }, 2200);
+    }
+
+    function showCartFeedback(button, name){
+      const originalText = button.textContent;
+      button.textContent = '담겼어요 ✓';
+      button.classList.add('added');
+      showToast(`${name} 장바구니에 담았어요.`);
+      setTimeout(() => {
+        button.textContent = originalText;
+        button.classList.remove('added');
+      }, 900);
+    }
+
+    function removeInvalidDiscountItems(){
+      const discountName = '주니어 · 형제 촬영 할인 적용';
+
+      const hasDiscount = cart.some(item => item.name === discountName);
+      if(!hasDiscount) return;
+
+      const hasOtherProduct = cart.some(item => item.name !== discountName);
+      if(hasOtherProduct) return;
+
+      for(let i = cart.length - 1; i >= 0; i--){
+        if(cart[i].name === discountName){
+          cart.splice(i, 1);
+        }
+      }
+
+      showToast('함께 담긴 다른 상품이 없어 할인 적용 상품도 제거했어요.');
+    }
+    const modal = document.getElementById('confirmModal');
+    const modalCancel = document.getElementById('modalCancel');
+    const modalConfirm = document.getElementById('modalConfirm');
+    let pendingPaymentType = '';
+
+    function syncButtonStates(){
+      document.querySelectorAll('.product-card').forEach(card => {
+        const button = card.querySelector('.add-button');
+        const name = card.dataset.name;
+
+        const exists = cart.some(item => item.name === name);
+
+        if(exists){
+          button.textContent = '✓ 장바구니 담김';
+          button.disabled = true;
+          button.style.opacity = '0.75';
+          button.style.cursor = 'default';
+        }else{
+          button.textContent = '장바구니 담기';
+          button.disabled = false;
+          button.style.opacity = '';
+          button.style.cursor = '';
+        }
+      });
+    }
+
+    function renderCart(){
+      cartList.innerHTML = '';
+      if(cart.length === 0){
+        cartList.innerHTML = '<div class="empty">아직 담긴 상품이 없습니다.</div>';
+        totalPrice.textContent = '0원';
+        fullPayButton.disabled = true;
+        syncButtonStates();
+        return;
+      }
+
+      let total = 0;
+      cart.forEach((item, index) => {
+        total += item.price;
+        const row = document.createElement('div');
+        row.className = 'cart-item';
+        row.innerHTML = `
+          <strong>${item.name}</strong>
+          <span>${formatter.format(item.price)}원</span>
+          <button class="remove-button" type="button" data-index="${index}">삭제</button>
+        `;
+        cartList.appendChild(row);
+      });
+      totalPrice.textContent = `${formatter.format(total)}원`;
+      fullPayButton.disabled = false;
+      syncButtonStates();
+    }
+
+    document.querySelectorAll('.product-card').forEach(card => {
+      card.querySelector('.add-button').addEventListener('click', event => {
+        const parent = card.dataset.parent;
+        const requiresCart = card.dataset.requiresCart;
+
+        if(parent){
+          const hasParent = cart.some(item => item.name === parent);
+          if(!hasParent){
+            showToast(`먼저 '${parent}' 상품을 담아주세요.`);
+            return;
+          }
+        }
+
+        if(requiresCart === 'true' && cart.length === 0){
+          showToast('할인 적용 상품은 다른 촬영 상품과 함께 예약할 때만 선택할 수 있어요.');
+          return;
+        }
+
+        const alreadyExists = cart.some(item => item.name === card.dataset.name);
+        if(alreadyExists){
+          showToast('이미 장바구니에 담긴 상품입니다.');
+          return;
+        }
+
+        const item = {
+          name: card.dataset.name,
+          price: Number(card.dataset.price)
+        };
+
+        cart.push(item);
+        renderCart();
+        showCartFeedback(event.currentTarget, item.name);
+      });
+    });
+
+    cartList.addEventListener('click', event => {
+      if(!event.target.classList.contains('remove-button')) return;
+
+      const removeIndex = Number(event.target.dataset.index);
+      const removed = cart[removeIndex];
+
+      cart.splice(removeIndex, 1);
+
+      if(removed && dependencyMap[removed.name]){
+        const children = dependencyMap[removed.name];
+
+        for(let i = cart.length - 1; i >= 0; i--){
+          if(children.includes(cart[i].name)){
+            cart.splice(i, 1);
+          }
+        }
+
+        showToast('관련 옵션도 함께 제거했어요.');
+      }
+
+      removeInvalidDiscountItems();
+      renderCart();
+    });
+
+    function openModal(type){
+      pendingPaymentType = type;
+      modal.classList.add('active');
+    }
+
+    function closeModal(){
+      pendingPaymentType = '';
+      modal.classList.remove('active');
+    }
+
+    fullPayButton.addEventListener('click', () => openModal('full'));
+    depositPayButton.addEventListener('click', () => openModal('deposit'));
+    modalCancel.addEventListener('click', closeModal);
+    modal.addEventListener('click', event => {
+      if(event.target === modal) closeModal();
+    });
+    modalConfirm.addEventListener('click', () => {
+      alert('토스페이먼츠 연결 전 시안입니다. 실제 연결 후 결제창으로 이동합니다.');
+      closeModal();
+    });
+
+    renderCart();
+  </script>
+</body>
+</html>
