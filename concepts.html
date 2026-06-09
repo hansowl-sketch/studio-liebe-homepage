@@ -176,6 +176,35 @@
             inset:-1000px;
         }
 
+        .top-nav{
+            position:fixed;
+            top:14px;
+            left:50%;
+            transform:translateX(-50%);
+            z-index:100;
+            display:flex;
+            gap:8px;
+            padding:8px;
+            border-radius:999px;
+            background:rgba(255,255,255,0.85);
+            backdrop-filter:blur(12px);
+            box-shadow:0 8px 24px rgba(0,0,0,0.08);
+        }
+
+        .top-nav a{
+            padding:10px 14px;
+            border-radius:999px;
+            color:#4a3b33;
+            font-size:14px;
+            font-weight:800;
+            text-decoration:none;
+            white-space:nowrap;
+        }
+
+        .top-nav a:hover{
+            background:#f3ede5;
+        }
+
         @media (min-width:720px){
             .container{
                 padding-left:28px;
@@ -194,6 +223,13 @@
 </head>
 
 <body>
+
+<nav class="top-nav">
+    <a href="index.html">홈</a>
+    <a href="price.html">가격</a>
+    <a href="https://map.naver.com/p/search/%EB%A6%AC%EB%B2%A0%EC%8A%A4%ED%8A%9C%EB%94%94%EC%98%A4/place/11578090" target="_blank" rel="noopener noreferrer">플레이스</a>
+    <a href="http://pf.kakao.com/_xcfcFd/chat" target="_blank" rel="noopener noreferrer">문의</a>
+</nav>
 
 <div class="container">
 
