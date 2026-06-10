@@ -5,6 +5,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <script src="https://js.tosspayments.com/v2/standard"></script>
   <title>결제 안내 | 스튜디오리베</title>
   <style>
     *{box-sizing:border-box;margin:0;padding:0}
@@ -400,6 +401,9 @@
 
   <script>
     const formatter = new Intl.NumberFormat('ko-KR');
+    const TOSS_CLIENT_KEY = 'test_gck_d46qopOB89jn1Dp1XJja3ZmM75y0';
+    const tossPayments = TossPayments(TOSS_CLIENT_KEY);
+    const payment = tossPayments.payment({customerKey: TossPayments.ANONYMOUS});
     const cart = [];
     const dependencyMap = {
       '아기 촬영 2컨셉':['아기 컨셉 추가','앨범 패키지'],
@@ -504,6 +508,56 @@
       syncButtonStates();
     }
 
+    function makeOrderId(){
+      return `liebe-${Date.now()}-${Math.random().toString(36).slice(2, 10)}`;
+    }
+
+    function getFullPaymentOrder(){
+      const total = cart.reduce((sum, item) => sum + item.price, 0);
+      const names = cart.map(item => item.name);
+      const orderName = names.length > 1 ? `${names[0]} 외 ${names.length - 1}건` : names[0];
+
+      return {
+        amount:total,
+        orderName:orderName || '스튜디오리베 전액 결제'
+      };
+    }
+
+    async function requestTossPayment(type){
+      let amount = 0;
+      let orderName = '';
+
+      if(type === 'deposit'){
+        amount = 50000;
+        orderName = '스튜디오리베 예약금';
+      }
+
+      if(type === 'full'){
+        const fullOrder = getFullPaymentOrder();
+        amount = fullOrder.amount;
+        orderName = fullOrder.orderName;
+      }
+
+      if(!amount){
+        showToast('결제할 상품을 먼저 선택해주세요.');
+        return;
+      }
+
+      try{
+        await payment.requestPayment({
+          method:'CARD',
+          amount:{currency:'KRW', value:amount},
+          orderId:makeOrderId(),
+          orderName,
+          successUrl:`${window.location.origin}/payment.html?paymentResult=success`,
+          failUrl:`${window.location.origin}/payment.html?paymentResult=fail`,
+          customerName:'스튜디오리베 고객'
+        });
+      }catch(error){
+        console.error(error);
+        alert(error.message || '결제창을 여는 중 문제가 발생했습니다.');
+      }
+    }
 
     document.querySelectorAll('.product-card').forEach(card => {
       card.querySelector('.add-button').addEventListener('click', event => {
@@ -580,9 +634,10 @@
     modal.addEventListener('click', event => {
       if(event.target === modal) closeModal();
     });
-    modalConfirm.addEventListener('click', () => {
-      alert('토스페이먼츠 연결 전 시안입니다. 실제 연결 후 결제창으로 이동합니다.');
+    modalConfirm.addEventListener('click', async () => {
+      const type = pendingPaymentType;
       closeModal();
+      await requestTossPayment(type);
     });
 
     renderCart();
