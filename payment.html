@@ -401,9 +401,20 @@
 
   <script>
     const formatter = new Intl.NumberFormat('ko-KR');
-    const TOSS_CLIENT_KEY = 'test_gck_d46qopOB89jn1Dp1XJja3ZmM75y0';
-    const tossPayments = TossPayments(TOSS_CLIENT_KEY);
-    const payment = tossPayments.payment({customerKey: TossPayments.ANONYMOUS});
+    const TOSS_CLIENT_KEY = 'test_ck_26DlbXAaV0K2Dg210w0n3qY50Q9R';
+    let tossPaymentInstance = null;
+
+    function getTossPayment(){
+      if(tossPaymentInstance) return tossPaymentInstance;
+
+      if(typeof TossPayments === 'undefined'){
+        throw new Error('토스페이먼츠 SDK를 불러오지 못했습니다. 잠시 후 다시 시도해주세요.');
+      }
+
+      const tossPayments = TossPayments(TOSS_CLIENT_KEY);
+      tossPaymentInstance = tossPayments.payment({customerKey:TossPayments.ANONYMOUS});
+      return tossPaymentInstance;
+    }
     const cart = [];
     const dependencyMap = {
       '아기 촬영 2컨셉':['아기 컨셉 추가','앨범 패키지'],
@@ -544,13 +555,16 @@
       }
 
       try{
+        const payment = getTossPayment();
+        const currentPageUrl = window.location.href.split('?')[0];
+
         await payment.requestPayment({
           method:'CARD',
           amount:{currency:'KRW', value:amount},
           orderId:makeOrderId(),
           orderName,
-          successUrl:`${window.location.origin}/payment.html?paymentResult=success`,
-          failUrl:`${window.location.origin}/payment.html?paymentResult=fail`,
+          successUrl:`${currentPageUrl}?paymentResult=success`,
+          failUrl:`${currentPageUrl}?paymentResult=fail`,
           customerName:'스튜디오리베 고객'
         });
       }catch(error){
