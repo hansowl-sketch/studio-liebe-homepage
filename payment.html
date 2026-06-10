@@ -338,7 +338,7 @@
             <strong id="totalPrice">0원</strong>
           </div>
           <button class="pay-button" id="fullPayButton" type="button" disabled>전액 결제하기</button>
-          <p class="cart-note">현재 버튼은 결제 연결 전 시안입니다. 토스페이먼츠 연결 후 실제 결제로 이어집니다.</p>
+          <p class="cart-note">결제 전 카카오톡으로 최종 상품 구성과 금액을 다시 한번 확인해주세요.</p>
         </aside>
       </div>
     </section>
@@ -572,7 +572,8 @@
           return;
         }
 
-        alert('결제가 정상적으로 완료되었습니다. 카카오톡으로 예약 내용을 확인해주세요.');
+        const paidAmount = formatter.format(amount);
+        alert(`결제가 정상적으로 완료되었습니다.\n\n주문번호: ${orderId}\n결제금액: ${paidAmount}원\n\n예약 내용은 카카오톡으로 최종 확인해주세요.`);
         window.history.replaceState({}, document.title, window.location.pathname);
       }catch(error){
         console.error(error);
