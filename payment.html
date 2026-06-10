@@ -534,6 +534,51 @@
       };
     }
 
+    async function confirmTossPaymentResult(){
+      const params = new URLSearchParams(window.location.search);
+      const paymentResult = params.get('paymentResult');
+
+      if(paymentResult === 'fail'){
+        alert('결제가 완료되지 않았습니다. 다시 시도해주세요.');
+        window.history.replaceState({}, document.title, window.location.pathname);
+        return;
+      }
+
+      if(paymentResult !== 'success') return;
+
+      const paymentKey = params.get('paymentKey');
+      const orderId = params.get('orderId');
+      const amount = Number(params.get('amount'));
+
+      if(!paymentKey || !orderId || !amount){
+        alert('결제 승인에 필요한 정보가 부족합니다. 카카오톡으로 문의해주세요.');
+        window.history.replaceState({}, document.title, window.location.pathname);
+        return;
+      }
+
+      try{
+        const response = await fetch('/.netlify/functions/confirm-payment', {
+          method:'POST',
+          headers:{'Content-Type':'application/json'},
+          body:JSON.stringify({paymentKey, orderId, amount})
+        });
+
+        const result = await response.json();
+
+        if(!response.ok){
+          console.error(result);
+          alert(result.message || '결제 승인 처리 중 문제가 발생했습니다. 카카오톡으로 문의해주세요.');
+          return;
+        }
+
+        alert('결제가 정상적으로 완료되었습니다. 카카오톡으로 예약 내용을 확인해주세요.');
+        window.history.replaceState({}, document.title, window.location.pathname);
+      }catch(error){
+        console.error(error);
+        alert('결제 승인 처리 중 문제가 발생했습니다. 카카오톡으로 문의해주세요.');
+      }
+    }
+
     async function requestTossPayment(type){
       let amount = 0;
       let orderName = '';
@@ -655,6 +700,7 @@
     });
 
     renderCart();
+    confirmTossPaymentResult();
   </script>
 </body>
 </html>
