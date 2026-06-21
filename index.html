@@ -659,6 +659,16 @@
             font-weight:900;
             text-decoration:none;
             box-shadow:0 12px 28px rgba(0,0,0,0.18);
+            opacity:0;
+            pointer-events:none;
+            transform:translateY(18px);
+            transition:opacity 0.22s ease, transform 0.22s ease;
+        }
+
+        .floating-kakao.is-visible{
+            opacity:1;
+            pointer-events:auto;
+            transform:translateY(0);
         }
 
         @media (min-width:768px){
@@ -1105,6 +1115,19 @@
 </a>
 
 <script>
+  const floatingKakao = document.querySelector('.floating-kakao');
+  const hero = document.querySelector('.hero');
+
+  function updateFloatingKakao() {
+    if (!floatingKakao || !hero) return;
+    const showAfter = hero.offsetHeight * 0.72;
+    floatingKakao.classList.toggle('is-visible', window.scrollY > showAfter);
+  }
+
+  updateFloatingKakao();
+  window.addEventListener('scroll', updateFloatingKakao, { passive: true });
+  window.addEventListener('resize', updateFloatingKakao);
+
   document.querySelectorAll('a[href*="pf.kakao.com"]').forEach(function(link) {
     link.addEventListener('click', function() {
       if (typeof gtag === 'function') {
