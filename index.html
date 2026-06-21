@@ -47,9 +47,7 @@
             content:"";
             position:absolute;
             inset:0;
-            background:
-                linear-gradient(180deg,rgba(42,31,25,0.12) 0%,rgba(42,31,25,0.18) 36%,rgba(42,31,25,0.86) 100%),
-                url("../assets/hero-main.webp") center center/cover no-repeat;
+            background:url("../assets/hero-main.webp") center center/cover no-repeat;
             z-index:0;
         }
 
@@ -57,7 +55,7 @@
             content:"";
             position:absolute;
             inset:0;
-            background:linear-gradient(180deg,rgba(255,255,255,0.10) 0%,rgba(255,255,255,0.02) 45%,rgba(42,31,25,0.18) 100%);
+            background:linear-gradient(180deg,rgba(255,250,243,0.72) 0%,rgba(255,250,243,0.28) 20%,rgba(255,250,243,0) 36%);
             z-index:1;
             pointer-events:none;
         }
@@ -677,9 +675,11 @@
             }
 
             .hero::before{
-                background:
-                    linear-gradient(90deg,rgba(255,255,255,0.78) 0%,rgba(255,255,255,0.28) 36%,rgba(255,255,255,0) 60%),
-                    url("../assets/hero-main.webp") center/cover no-repeat;
+                background:url("../assets/hero-main.webp") center/cover no-repeat;
+            }
+
+            .hero::after{
+                background:radial-gradient(ellipse 720px 520px at 0 0,rgba(255,250,243,0.78) 0%,rgba(255,250,243,0.42) 42%,rgba(255,250,243,0) 76%);
             }
 
             .hero-inner{
