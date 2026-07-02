@@ -241,38 +241,6 @@
 
           <div class="product-group">
             <div class="group-title">
-              <h3>성장 원본형</h3>
-              <span>DATA</span>
-            </div>
-            <p class="group-desc">앨범과 액자보다 원본 전체 제공을 우선으로 원하는 가족을 위한 구성입니다.</p>
-
-            <article class="product-card" data-name="성장 원본형" data-price="500000">
-              <div class="product-top">
-                <div><h4>기본 구성</h4><p>3회 촬영 포함 / 각 시기 2컨셉 · 원본 전체 제공 · 앨범/액자 미포함</p></div>
-                <div class="price">500,000원</div>
-              </div>
-              <button class="add-button" type="button">장바구니 담기</button>
-            </article>
-
-            <article class="product-card option-card" data-name="성장 원본형 만삭 추가" data-price="120000" data-parent="성장 원본형">
-              <div class="product-top">
-                <div><h4>성장 원본형 만삭 추가</h4><p>성장 원본형 구성에 만삭 촬영을 추가할 때 선택</p></div>
-                <div class="price">120,000원</div>
-              </div>
-              <button class="add-button" type="button">장바구니 담기</button>
-            </article>
-
-            <article class="product-card option-card" data-name="성장 원본형 가족 촬영 추가" data-price="120000" data-parent="성장 원본형">
-              <div class="product-top">
-                <div><h4>성장 원본형 가족 촬영 추가</h4><p>성장 원본형 구성에 가족 촬영을 추가할 때 선택</p></div>
-                <div class="price">120,000원</div>
-              </div>
-              <button class="add-button" type="button">장바구니 담기</button>
-            </article>
-          </div>
-
-          <div class="product-group">
-            <div class="group-title">
               <h3>단품 · 추가 촬영</h3>
               <span>ADD-ON</span>
             </div>
@@ -420,8 +388,7 @@
     const dependencyMap = {
       '아기 촬영 2컨셉':['아기 컨셉 추가','앨범 패키지'],
       '성장 A':['성장 A 만삭 추가','성장 A 50일 추가'],
-      '성장 B':['성장 B 만삭 추가','성장 B 50일 추가'],
-      '성장 원본형':['성장 원본형 만삭 추가','성장 원본형 가족 촬영 추가']
+      '성장 B':['성장 B 만삭 추가','성장 B 50일 추가']
     };
     const productButtons = new Map();
     const cartList = document.getElementById('cartList');
